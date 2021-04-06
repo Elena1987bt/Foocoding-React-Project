@@ -1,0 +1,7 @@
+.adverts {
+  background-color: var(--pink);
+  text-align: center;
+  color: var(--white);
+  font-weight: 500;
+  height: 1.5rem;
+}
