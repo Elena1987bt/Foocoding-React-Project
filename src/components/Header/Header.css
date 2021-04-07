@@ -69,10 +69,24 @@ nav {
 
 .nav__icon {
   transition: all 300ms ease-in-out;
-  color: var(--pink);
+  color: var(--black);
+  font-size: 2rem !important;
+  position: relative;
+}
+.nav__icon .count {
+  position: absolute;
+  top: -0.3rem;
+  right: -0.5rem;
+  background-color: var(--pink);
+  height: 1.4rem;
+  font-size: 0.5rem;
+  padding: 0.4rem;
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 50%;
 }
 .nav__icon:hover {
-  color: var(--black);
+  color: var(--pink);
 }
 
 @media only screen and (max-width: 768px) {

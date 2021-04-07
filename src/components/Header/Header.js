@@ -85,6 +85,7 @@ const Header = () => {
             <li className="nav__item">
               <Link to="/cart" className="nav__icon">
                 <ShoppingCartIcon />
+                <small class="count">0</small>
               </Link>
             </li>
             <li className="nav__item">

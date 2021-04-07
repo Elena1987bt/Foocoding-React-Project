@@ -1,0 +1,61 @@
+.hero__slide {
+  height: 87vh;
+  width: 100%;
+  position: relative;
+}
+.hero__slide img {
+  width: 100%;
+  object-fit: cover;
+}
+.hero__content {
+  position: absolute;
+  top: 50%;
+  transform: translate(25%, -50%);
+}
+
+.hero__content span {
+  display: inline-block;
+  font-size: 1rem;
+  color: var(--grey);
+  margin-bottom: 0.5rem;
+}
+
+.hero__content h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.hero__content h3 {
+  font-weight: 400;
+  color: var(--grey);
+  margin-bottom: 1.5rem;
+}
+.hero__buttonsGroup button {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid var(--black);
+  outline: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.hero__buttonsGroup button:first-child {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.hero__buttonsGroup button:first-child:hover {
+  background-color: transparent;
+  color: var(--black);
+}
+
+.hero__buttonsGroup button:last-child:hover {
+  background-color: var(--black);
+  color: var(--white);
+}

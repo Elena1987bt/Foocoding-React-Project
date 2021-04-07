@@ -1,28 +1,53 @@
 import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import HeroSlide from './HeroSlide/HeroSlide';
+import hero1 from '../../assets/images/hero1.jpg';
+import hero2 from '../../assets/images/hero2.jpg';
+import hero4 from '../../assets/images/hero4.jpg';
+
 import './Hero.css';
 
 const Hero = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    fade: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    className: 'slides',
+  };
   return (
-    <div className="hero">
-      <div className="hero_image"></div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quaerat suscipit ut
-        exercitationem nihil. Nostrum cum atque, dolor ratione temporibus quibusdam natus
-        praesentium repellat possimus asperiores dolorem corrupti. Corporis, dolorum nisi quos
-        blanditiis ad laudantium consequatur harum voluptas quo quod placeat doloremque facilis
-        nesciunt? Tempore aliquid ad culpa molestias. Odio.
-      </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos similique quidem consequuntur
-        dolorem aut sed minus, ipsam, atque, quia veniam provident dolores tempore earum cumque rem
-        quis velit mollitia suscipit. Maxime at doloribus quibusdam voluptates fugiat excepturi et,
-        dicta fuga facere omnis odit veniam eveniet necessitatibus expedita sequi, quaerat quia
-        commodi nisi dolores deleniti sit unde veritatis possimus quo. At accusantium similique
-        earum obcaecati odio dolor, nulla minus nisi architecto vel esse quod? Aut accusantium
-        laudantium alias ut molestiae tempora natus quod quibusdam nobis illo error labore quia, id
-        magnam, nam placeat quaerat optio consectetur earum aliquid sit deserunt voluptatibus.
-      </p>
-    </div>
+    <Slider {...settings}>
+      <HeroSlide
+        image={hero1}
+        titleOne="New Inspiration 2021"
+        titleTwo="CLOTHING MADE FOR YOU!"
+        titleThree="Trending from men and women style collection"
+        btnOne="shop women's"
+        btnTwo="shop men's"
+      />
+      <HeroSlide
+        image={hero2}
+        titleOne="New Inspiration 2021"
+        titleTwo="CLOTHING MADE FOR YOU!"
+        titleThree="Trending from men and women style collection"
+        btnOne="shop women's"
+        btnTwo="shop men's"
+      />
+      <HeroSlide
+        image={hero4}
+        titleOne="New Inspiration 2021"
+        titleTwo="CLOTHING MADE FOR YOU!"
+        titleThree="Trending from men and women style collection"
+        btnOne="shop women's"
+        btnTwo="shop men's"
+      />
+    </Slider>
   );
 };
 
