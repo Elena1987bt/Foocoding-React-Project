@@ -22,10 +22,17 @@
   right: 3%;
 }
 .slick-dots {
-  bottom: 30px;
+  bottom: 1.8rem;
 }
 
 .slick-dots li.slick-active button:before {
   color: var(--black);
   font-size: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .slick-next:before,
+  .slick-prev:before {
+    font-size: 1.6rem;
+  }
 }
