@@ -13,6 +13,9 @@
   top: 45%;
   transform: translate(25%, -50%);
 }
+.different__hero__content {
+  transform: translate(15%, -50%);
+}
 
 .hero__content span {
   display: inline-block;
@@ -32,7 +35,7 @@
   color: var(--grey);
   margin-bottom: 1.5rem;
 }
-.hero__buttonsGroup button {
+.hero__buttonsGroup .hero__button {
   display: inline-block;
   background-color: transparent;
   border: 1px solid var(--black);
@@ -46,17 +49,17 @@
   transition: all 300ms ease-in-out;
 }
 
-.hero__buttonsGroup button:first-child {
+.hero__buttonsGroup .hero__button:first-child {
   background-color: var(--black);
   color: var(--white);
 }
 
-.hero__buttonsGroup button:first-child:hover {
+.hero__buttonsGroup .hero__button:first-child:hover {
   background-color: transparent;
   color: var(--black);
 }
 
-.hero__buttonsGroup button:last-child:hover {
+.hero__buttonsGroup .hero__button:last-child:hover {
   background-color: var(--black);
   color: var(--white);
 }
@@ -64,16 +67,18 @@
   .hero__slide {
     height: 50vh;
   }
+
   .hero__content h1 {
     font-size: 1.1rem;
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    max-width: 12rem;
+    margin-bottom: 1rem;
   }
 
   .hero__content h3 {
     display: none;
   }
-  .hero__buttonsGroup button {
+  .hero__buttonsGroup .hero__button {
     display: flex;
     flex-direction: column;
     width: 130px;
@@ -81,5 +86,8 @@
     padding: 0.5rem 1rem;
     font-size: 0.7rem;
     margin-bottom: 0.5rem;
+  }
+  .different__hero__content {
+    transform: translate(25%, -50%);
   }
 }

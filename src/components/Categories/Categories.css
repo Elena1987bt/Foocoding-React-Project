@@ -1,0 +1,33 @@
+.categories {
+  padding: 3rem 0;
+}
+
+.categories__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.categories__center {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media only screen and (max-width: 996px) {
+  .categories__center {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .categories__title {
+    max-width: 70%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .categories__center {
+    grid-template-columns: 1fr;
+  }
+}

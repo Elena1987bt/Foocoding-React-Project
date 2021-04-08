@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Adverts from '../Adverts/Adverts';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import LocalMallIcon from '@material-ui/icons/LocalMall';
 import SearchIcon from '@material-ui/icons/Search';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
@@ -33,67 +33,63 @@ const Header = () => {
   return (
     <header>
       <Adverts />
-      <nav className="container" ref={navBar}>
-        <div className="nav-center">
-          <Link to="/" className="nav__logo">
-            Sho<span>p</span>ify
-          </Link>
-          <button className={`nav__toggleBtn ${show && 'hide'}`} onClick={toggleButton}>
-            <MenuIcon className="MenuIcon" />
-          </button>
-        </div>
-
-        <div className={`nav__menu ${show && 'show'}`}>
-          <div className="nav__topMobile">
+      <nav ref={navBar}>
+        <div className="container">
+          <div className="nav-center">
             <Link to="/" className="nav__logo">
               Sho<span>p</span>ify
             </Link>
-            <button className="nav__toggleBtn" onClick={toggleButton}>
-              <CloseIcon />
+            <button className={`nav__toggleBtn ${show && 'hide'}`} onClick={toggleButton}>
+              <MenuIcon className="MenuIcon" />
             </button>
           </div>
-          <ul className="nav__list">
-            <li className="nav__item">
-              <Link to="/" className="nav__link">
-                Home
-              </Link>
-            </li>
 
-            <li className="nav__item">
-              <Link to="/shop" className="nav__link">
-                Products
+          <div className={`nav__menu ${show && 'show'}`}>
+            <div className="nav__topMobile">
+              <Link to="/" className="nav__logo">
+                Sho<span>p</span>ify
               </Link>
-            </li>
+              <button className="nav__toggleBtn" onClick={toggleButton}>
+                <CloseIcon />
+              </button>
+            </div>
+            <ul className="nav__list">
+              <li className="nav__item">
+                <Link to="/" className="nav__link">
+                  Home
+                </Link>
+              </li>
 
-            <li className="nav__item">
-              <Link to="/new" className="nav__link">
-                New
-              </Link>
-            </li>
+              <li className="nav__item">
+                <Link to="/products" className="nav__link">
+                  Products
+                </Link>
+              </li>
 
-            <li className="nav__item">
-              <Link to="/about" className="nav__link">
-                About
-              </Link>
-            </li>
+              <li className="nav__item">
+                <Link to="/About" className="nav__link">
+                  About
+                </Link>
+              </li>
 
-            <li className="nav__item">
-              <Link to="/blog" className="nav__link">
-                Blog
-              </Link>
-            </li>
-            <li className="nav__item">
-              <Link to="/cart" className="nav__icon">
-                <ShoppingCartIcon />
-                <small class="count">0</small>
-              </Link>
-            </li>
-            <li className="nav__item">
-              <Link to="/search" className="nav__icon">
-                <SearchIcon />
-              </Link>
-            </li>
-          </ul>
+              <li className="nav__item">
+                <Link to="/login" className="nav__link">
+                  Login
+                </Link>
+              </li>
+              <li className="nav__item">
+                <Link to="/cart" className="nav__icon">
+                  <LocalMallIcon />
+                  <small className="count">0</small>
+                </Link>
+              </li>
+              <li className="nav__item">
+                <Link to="/search" className="nav__icon">
+                  <SearchIcon />
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>

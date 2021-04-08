@@ -4,7 +4,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import HeroSlide from './HeroSlide/HeroSlide';
 import hero1 from '../../assets/images/hero1.jpg';
-import hero2 from '../../assets/images/hero2.jpg';
+import hero6 from '../../assets/images/hero6.jpeg';
+//import hero7 from '../../assets/images/hero7.jpg';
 import hero4 from '../../assets/images/hero4.jpg';
 
 import './Hero.css';
@@ -26,13 +27,13 @@ const Hero = () => {
       <HeroSlide
         image={hero1}
         titleOne="New Inspiration 2021"
-        titleTwo="CLOTHING MADE FOR YOU!"
+        titleTwo="UP TO 70% OFF ON SALES"
         titleThree="Trending from men and women style collection"
         btnOne="shop women's"
         btnTwo="shop men's"
       />
       <HeroSlide
-        image={hero2}
+        image={hero6}
         titleOne="New Inspiration 2021"
         titleTwo="CLOTHING MADE FOR YOU!"
         titleThree="Trending from men and women style collection"
@@ -42,10 +43,11 @@ const Hero = () => {
       <HeroSlide
         image={hero4}
         titleOne="New Inspiration 2021"
-        titleTwo="CLOTHING MADE FOR YOU!"
+        titleTwo="GET ALL EXCLUSIVE OFFERS FOR THIS SEASON"
         titleThree="Trending from men and women style collection"
         btnOne="shop women's"
         btnTwo="shop men's"
+        different
       />
     </Slider>
   );
