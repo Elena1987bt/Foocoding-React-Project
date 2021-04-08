@@ -32,8 +32,8 @@ form span {
 }
 .products__center {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minMax(20rem, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minMax(18rem, 1fr));
+  gap: 1.5rem;
   max-width: 130rem;
   margin: 0 auto;
 }

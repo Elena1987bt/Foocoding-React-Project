@@ -8,13 +8,13 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import TuneIcon from '@material-ui/icons/Tune';
 import './SingleProduct.css';
 
-const SingleProduct = () => {
+const SingleProduct = ({ bottomClass }) => {
   const [favoriteIcon, setFavoriteIcon] = useState(false);
   return (
     <div className="singleProduct">
       <div className="singleProduct__img">
         <img src={image} alt="" />
-        <div className="singleProduct__addCart">
+        <div className={`singleProduct__addCart ${bottomClass && 'bottom'}`}>
           <ShoppingCartIcon className="singleProduct__Icon" />
         </div>
 
