@@ -16,6 +16,7 @@ const Home = () => {
         title="Shop By Brand"
         subtitle="Select from the premium product brands and save plenty money"
         slidesToShow={5}
+        slideToShowMobile={3}
       />
     </div>
   );

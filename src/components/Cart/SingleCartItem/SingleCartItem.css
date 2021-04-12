@@ -1,0 +1,69 @@
+.cart__info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: -0.5rem;
+}
+
+tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.cart__info span {
+  color: var(--pink);
+}
+
+td input {
+  width: 3rem;
+  height: 2rem;
+  padding: 0.2rem;
+  margin-left: -11rem;
+}
+
+button {
+  color: var(--lightPink);
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  transition: all 0.5s ease-in;
+}
+button:hover {
+  color: var(--pink);
+}
+
+td img {
+  width: 8rem;
+  height: 8rem;
+  margin-right: 1rem;
+  object-fit: contain;
+}
+
+td:last-child {
+  text-align: right;
+}
+
+@media only screen and (max-width: 768px) {
+  .cart__info {
+    flex-direction: column;
+  }
+  .cart__info p {
+    display: none;
+  }
+  td input {
+    margin-left: -4rem;
+  }
+  td img {
+    width: 7rem;
+    height: 7rem;
+  }
+}
+@media only screen and (max-width: 568px) {
+  td input {
+    margin-left: 0;
+  }
+}

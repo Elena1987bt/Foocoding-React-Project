@@ -3,13 +3,10 @@
   --white: #fff;
   --black: #222;
   --pink: #f60091;
-  /* --pink: #ff7c9c;
-  --blue: #243a6f; */
+  --lightPink: #ff7c9c;
+  --blue: #243a6f;
   --grey: #444;
   --grey2: #959595;
-  --grey-alt: #d1e2e9;
-  --yellow: #ffd800;
-  --green: #59b210;
 }
 
 *,
@@ -38,6 +35,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: #333;
 }
 
 img {

@@ -1,0 +1,33 @@
+.about__container {
+  display: flex;
+  align-items: center;
+  padding: 5rem;
+}
+.about__map {
+  height: 60vh;
+  flex: 0.5;
+  gap: 10;
+  width: 100%;
+  margin: 2rem;
+}
+.iframe {
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+.about__info {
+  flex: 0.5;
+}
+.about__info h2 {
+  margin-bottom: 0.7rem;
+}
+.about__info p {
+  margin-bottom: 0.7rem;
+}
+@media only screen and (max-width: 768px) {
+  .about__container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 1rem 0.5rem;
+  }
+}

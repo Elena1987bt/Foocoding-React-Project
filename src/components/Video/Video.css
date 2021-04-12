@@ -1,0 +1,36 @@
+.video {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  transition: 0.5s;
+}
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  z-index: 20;
+}
+.video__text {
+  position: absolute;
+  font-size: 2rem;
+  top: 6rem;
+  left: 55rem;
+  color: #c21287;
+  font-style: italic;
+  text-transform: capitalize;
+  z-index: 100;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--pink);
+  mix-blend-mode: overlay;
+  z-index: 30;
+}

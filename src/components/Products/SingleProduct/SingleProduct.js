@@ -14,9 +14,9 @@ const SingleProduct = ({ bottomClass }) => {
     <div className="singleProduct">
       <div className="singleProduct__img">
         <img src={image} alt="" />
-        <div className={`singleProduct__addCart ${bottomClass && 'bottom'}`}>
+        <Link to="/productDetail" className={`singleProduct__addCart ${bottomClass && 'bottom'}`}>
           <ShoppingCartIcon className="singleProduct__Icon" />
-        </div>
+        </Link>
 
         <ul className="singleProduct__Icons">
           <span>

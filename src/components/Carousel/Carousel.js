@@ -11,7 +11,7 @@ import brandSix from '../../assets/images/brand6.png';
 import brandSeven from '../../assets/images/brand7.png';
 import './Carousel.css';
 
-const Carousel = ({ Slide, title, subtitle, slidesToShow }) => {
+const Carousel = ({ Slide, title, subtitle, slidesToShow, slideToShowMobile }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -20,6 +20,14 @@ const Carousel = ({ Slide, title, subtitle, slidesToShow }) => {
     speed: 500,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: slideToShowMobile,
+        },
+      },
+    ],
   };
   return (
     <section className="carousel">

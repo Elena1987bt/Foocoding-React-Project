@@ -7,7 +7,12 @@ const ProductDetailPage = () => {
   return (
     <div>
       <ProductDetail />
-      <Carousel Slide={SingleProduct} title="Related Products" slidesToShow={3} />
+      <Carousel
+        Slide={SingleProduct}
+        title="Related Products"
+        slidesToShow={3}
+        slideToShowMobile={1}
+      />
     </div>
   );
 };

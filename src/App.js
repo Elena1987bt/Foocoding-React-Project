@@ -4,7 +4,10 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
 import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
-import About from './pages/About';
+import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage';
+import LoginPage from './pages/LoginPage';
+import AboutPage from './pages/AboutPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Loading from './components/Loading/Loading';
 import './App.css';
@@ -27,7 +30,16 @@ function App() {
             <ProductDetailPage />
           </Route>
           <Route path="/about" exact>
-            <About />
+            <AboutPage />
+          </Route>
+          <Route path="/login" exact>
+            <LoginPage />
+          </Route>
+          <Route path="/cart" exact>
+            <CartPage />
+          </Route>
+          <Route path="/checkout" exact>
+            <CheckoutPage />
           </Route>
         </Switch>
         <Footer />

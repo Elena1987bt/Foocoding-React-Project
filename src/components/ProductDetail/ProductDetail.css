@@ -55,18 +55,12 @@
 .productDetail__price {
   font-size: 1.5rem;
   color: var(--pink);
-}
-
-.productDetail__right div {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .productDetail__right select {
   font-family: 'Poppins', sans-serif;
-  width: 15rem;
+  width: 23rem;
   padding: 0.4rem;
   border: 1px solid #ccc;
   appearance: none;
@@ -80,7 +74,7 @@
 .productDetail form span {
   position: absolute;
   top: -0.8rem;
-  right: 0.3rem;
+  right: 17rem;
   transform: translateY(-50%);
   font-size: 2rem;
   z-index: 0;
@@ -88,6 +82,9 @@
 
 .productDetail__buttons {
   display: flex;
+  position: relative;
+  z-index: 1;
+  margin-top: 0.5rem;
   margin-bottom: 2rem;
 }
 
@@ -97,6 +94,7 @@
   color: #fff;
   border-radius: 3rem;
   margin-right: 0.5rem;
+
   transition: background-color 0.4s ease-in-out;
 }
 .productDetail__button:hover {
@@ -113,7 +111,7 @@
 @media only screen and (max-width: 996px) {
   .productDetail__left {
     width: 20rem;
-    height: 35rem;
+    height: 25rem;
   }
 
   .productDetail__center {
@@ -128,12 +126,21 @@
   .productDetail .thumbnail {
     width: auto;
     height: 5rem;
-    background-color: #f6f2f1;
     text-align: center;
     padding: 0.5rem;
   }
   .productDetail__buttons {
     flex-direction: column;
+  }
+  .productDetail__button {
+    margin-bottom: 0.5rem;
+    width: 15rem;
+  }
+  .productDetail__right select {
+    width: 10rem;
+  }
+  .productDetail form span {
+    right: 12rem;
   }
 }
 
@@ -143,12 +150,12 @@
   }
 
   .productDetail__right {
-    margin-top: 10rem;
+    margin-top: 0;
   }
 
   .productDetail__left {
     width: 100%;
-    height: 45rem;
+    height: 20rem;
   }
 
   .productDetail .thumbnails {
@@ -157,5 +164,13 @@
   }
   .productDetail__buttons {
     flex-direction: column;
+  }
+  .productDetail__button {
+    margin-bottom: 0.5rem;
+    width: 15rem;
+  }
+  .productDetail form span {
+    right: 11.5rem;
+    top: -0.5;
   }
 }
