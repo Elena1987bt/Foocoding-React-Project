@@ -8,7 +8,7 @@ import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import LoginPage from './pages/LoginPage';
 import AboutPage from './pages/AboutPage';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
 import Loading from './components/Loading/Loading';
 import './App.css';
 
@@ -26,7 +26,7 @@ function App() {
           <Route path="/products" exact>
             <ProductsPage />
           </Route>
-          <Route path="/productDetail" exact>
+          <Route path="/productDetail/:id" exact>
             <ProductDetailPage />
           </Route>
           <Route path="/about" exact>

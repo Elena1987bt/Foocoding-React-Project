@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import './Products.css';
 import SingleProduct from './SingleProduct/SingleProduct';
 
 const Products = () => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch('https://fakestoreapi.com/products');
+        const data = await res.json();
+        // console.log(data);
+        setProducts(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <section className="products">
       <div className="products__top container">
@@ -24,10 +38,9 @@ const Products = () => {
       </div>
 
       <div className="products__center container">
-        <SingleProduct />
-        <SingleProduct />
-        <SingleProduct />
-        <SingleProduct />
+        {products.map((product) => (
+          <SingleProduct key={product.id} product={product} />
+        ))}
       </div>
       <div className="pagination">
         <div className=" container">

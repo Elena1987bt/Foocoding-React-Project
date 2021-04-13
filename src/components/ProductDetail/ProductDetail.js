@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import image from '../../assets/images/promotionOne.jpg';
 import './ProductDetail.css';
 
-const ProductDetail = () => {
+const ProductDetail = ({ product }) => {
+  const { category, id, title, image, price, description } = product;
   return (
     <section className="productDetail">
       <div className="productDetail__center container">
         <div className="productDetail__left">
           <div className="mainImage">
-            <img src={image} alt="" />
+            <img src={image} alt={title} />
           </div>
           <div className="thumbnails">
             <div className="thumbnail">
@@ -28,9 +28,9 @@ const ProductDetail = () => {
           </div>
         </div>
         <div className="productDetail__right">
-          <span>Home/T-shirt</span>
-          <h1>Boy’s T-Shirt By Handsome</h1>
-          <div className="productDetail__price">$50</div>
+          <span>{category}</span>
+          <h1>{title}</h1>
+          <div className="productDetail__price">${price}</div>
           <form>
             <div>
               <select>
@@ -57,11 +57,7 @@ const ProductDetail = () => {
             </Link>
           </div>
           <h3>Product Detail</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero minima delectus nulla
-            voluptates nesciunt quidem laudantium, quisquam voluptas facilis dicta in explicabo,
-            laboriosam ipsam suscipit!
-          </p>
+          <p>{description}</p>
         </div>
       </div>
     </section>
