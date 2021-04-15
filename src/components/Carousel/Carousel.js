@@ -11,7 +11,7 @@ import brandSix from '../../assets/images/brand6.png';
 import brandSeven from '../../assets/images/brand7.png';
 import './Carousel.css';
 
-const Carousel = ({ Slide, title, subtitle, slidesToShow, slideToShowMobile }) => {
+const Carousel = ({ Slide, title, subtitle, slidesToShow, slideToShowMobile, product }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -37,13 +37,13 @@ const Carousel = ({ Slide, title, subtitle, slidesToShow, slideToShowMobile }) =
       </div>
       <div className="container">
         <Slider {...settings}>
-          <Slide image={brandOne} bottomClass />
-          <Slide image={brandTwo} bottomClass />
-          <Slide image={brandThree} bottomClass />
-          <Slide image={brandFour} bottomClass />
-          <Slide image={brandFive} bottomClass />
-          <Slide image={brandSix} bottomClass />
-          <Slide image={brandSeven} bottomClass />
+          <Slide image={brandOne} bottomClass product={product} />
+          <Slide image={brandTwo} bottomClass product={product} />
+          <Slide image={brandThree} bottomClass product={product} />
+          <Slide image={brandFour} bottomClass product={product} />
+          <Slide image={brandFive} bottomClass product={product} />
+          <Slide image={brandSix} bottomClass product={product} />
+          <Slide image={brandSeven} bottomClass product={product} />
         </Slider>
       </div>
     </section>

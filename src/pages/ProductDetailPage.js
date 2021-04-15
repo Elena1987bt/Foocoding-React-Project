@@ -30,12 +30,13 @@ const ProductDetailPage = () => {
   return (
     <div>
       <ProductDetail product={product} />
-      {/* <Carousel
+      <Carousel
         Slide={SingleProduct}
         title="Related Products"
         slidesToShow={3}
         slideToShowMobile={1}
-      /> */}
+        product={product}
+      />
     </div>
   );
 };

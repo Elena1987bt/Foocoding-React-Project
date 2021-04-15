@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import './Products.css';
 import SingleProduct from './SingleProduct/SingleProduct';
+import Loading from '../Loading/Loading';
+import './Products.css';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
         const res = await fetch('https://fakestoreapi.com/products');
         const data = await res.json();
         // console.log(data);
         setProducts(data);
+        setLoading(false);
       } catch (err) {
         console.log(err);
+        setLoading(false);
       }
     };
     fetchData();
   }, []);
+  if (loading) return <Loading />;
   return (
     <section className="products">
       <div className="products__top container">
