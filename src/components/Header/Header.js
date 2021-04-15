@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Adverts from '../Adverts/Adverts';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
 import SearchIcon from '@material-ui/icons/Search';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import { Link } from 'react-router-dom';
@@ -73,8 +75,13 @@ const Header = () => {
               </li>
 
               <li className="nav__item">
-                <Link to="/login" className="nav__link">
-                  Login
+                <Link to="/login" className="nav__icon">
+                  <PersonOutlineIcon />
+                </Link>
+              </li>
+              <li className="nav__item">
+                <Link to="/" className="nav__icon">
+                  <FavoriteBorderIcon />
                 </Link>
               </li>
               <li className="nav__item">

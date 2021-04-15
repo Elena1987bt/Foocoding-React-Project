@@ -75,6 +75,7 @@ nav .container {
   color: var(--black);
   font-size: 2rem !important;
   position: relative;
+  margin-right: -0.5rem;
 }
 .nav__icon .count {
   position: absolute;
