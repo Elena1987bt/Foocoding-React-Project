@@ -17,14 +17,14 @@ const About = () => {
             <h2> Welcome to our store!</h2>
             <p>
               We're dedicated to giving you the very best of our products, with a focus on
-              dependability, customer service and uniqueness. Founded in 2000 by Sara Shopify has
-              come a long way from its beginnings in the Dream city in Sweden.{' '}
+              dependability, customer service and uniqueness. Founded in 2000 by Sara, Shopify has
+              become one of the best online stores in Dream city in Sweden.
             </p>
             <p>
               When Sara first started out, her passion for fashion drove her to quit her day job and
-              gave her the impetus to turn hard work and inspiration into to a booming online store.
-              We now serve customers all over the world nd are thrilled to be a part of the
-              eco-friendly, fair trade wing of the fashion world.
+              with hard work and inspiration to turn her idea into a booming online store. We now
+              serve customers all over the world and are thrilled to be a part of the eco-friendly,
+              fair trade wing of the fashion world.
             </p>
             <p>
               We hope you enjoy our products as much as we enjoy offering them to you. If you have

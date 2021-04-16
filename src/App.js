@@ -10,7 +10,6 @@ import LoginPage from './pages/LoginPage';
 import AboutPage from './pages/AboutPage';
 import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
 import Loading from './components/Loading/Loading';
-import './App.css';
 
 function App() {
   const [loading, setLoading] = useState(false);
