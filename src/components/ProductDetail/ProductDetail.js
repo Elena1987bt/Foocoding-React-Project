@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import { useAppContext } from '../../context/context';
 import './ProductDetail.css';
 
-const ProductDetail = ({ product }) => {
-  const { category, id, title, image, price, description } = product;
+const ProductDetail = () => {
+  const [{ product }] = useAppContext();
+  const { category, title, image, price, description } = product;
   return (
     <section className="productDetail">
       <div className="productDetail__center container">

@@ -2,16 +2,10 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import brandOne from '../../assets/images/brand1.png';
-import brandTwo from '../../assets/images/brand2.png';
-import brandThree from '../../assets/images/brand3.png';
-import brandFour from '../../assets/images/brand4.png';
-import brandFive from '../../assets/images/brand5.png';
-import brandSix from '../../assets/images/brand6.png';
-import brandSeven from '../../assets/images/brand7.png';
+
 import './Carousel.css';
 
-const Carousel = ({ Slide, title, subtitle, slidesToShow, slideToShowMobile, product }) => {
+const Carousel = ({ Slide, title, subtitle, slidesToShow, slideToShowMobile, products }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -37,13 +31,9 @@ const Carousel = ({ Slide, title, subtitle, slidesToShow, slideToShowMobile, pro
       </div>
       <div className="container">
         <Slider {...settings}>
-          <Slide image={brandOne} bottomClass product={product} />
-          <Slide image={brandTwo} bottomClass product={product} />
-          <Slide image={brandThree} bottomClass product={product} />
-          <Slide image={brandFour} bottomClass product={product} />
-          <Slide image={brandFive} bottomClass product={product} />
-          <Slide image={brandSix} bottomClass product={product} />
-          <Slide image={brandSeven} bottomClass product={product} />
+          {products.map((el, index) => (
+            <Slide image={el} bottomClass product={el} key={index} />
+          ))}
         </Slider>
       </div>
     </section>

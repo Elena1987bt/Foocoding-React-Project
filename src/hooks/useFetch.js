@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useAppContext } from '../context/context';
 import axios from 'axios';
 
-export default function useFetchData() {
-  const [{ loading, products, category }, dispatch] = useAppContext();
-  let url;
+export default function useFetchData(category = 'All') {
+  const [{ products, relatedProducts }, dispatch] = useAppContext();
+  let url = 'https://fakestoreapi.com/products';
   if (category === 'All') {
     url = 'https://fakestoreapi.com/products';
   } else {
@@ -45,5 +45,5 @@ export default function useFetchData() {
     fetchData();
   }, [category]);
 
-  return [loading, products];
+  return [products];
 }

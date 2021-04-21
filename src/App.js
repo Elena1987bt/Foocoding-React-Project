@@ -7,14 +7,9 @@ import CartPage from './pages/CartPage';
 import CheckoutPage from './pages/CheckoutPage';
 import LoginPage from './pages/LoginPage';
 import AboutPage from './pages/AboutPage';
-import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
-import Loading from './components/Loading/Loading';
-import { useAppContext } from './context/context';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
-  const [{ loading }] = useAppContext();
-
-  if (loading) return <Loading />;
   return (
     <Router>
       <div className="app">

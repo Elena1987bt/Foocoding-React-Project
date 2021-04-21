@@ -7,8 +7,9 @@ import './Products.css';
 import useFetchData from '../../hooks/useFetch';
 
 const Products = () => {
-  const [state, dispatch] = useAppContext();
-  const [loading, products] = useFetchData();
+  const [{ category, loading }, dispatch] = useAppContext();
+  const [products] = useFetchData(category);
+  console.log(products);
 
   const filterProduct = (e) => {
     const category = e.target.value;
