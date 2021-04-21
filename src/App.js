@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
@@ -10,9 +9,11 @@ import LoginPage from './pages/LoginPage';
 import AboutPage from './pages/AboutPage';
 import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom';
 import Loading from './components/Loading/Loading';
+import { useAppContext } from './context/context';
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [{ loading }] = useAppContext();
+
   if (loading) return <Loading />;
   return (
     <Router>

@@ -9,7 +9,7 @@ import TuneIcon from '@material-ui/icons/Tune';
 import './SingleProduct.css';
 
 const SingleProduct = ({ bottomClass, product }) => {
-  console.log(product);
+  // console.log(product);
   const { id, image, price, title } = product;
 
   const [favoriteIcon, setFavoriteIcon] = useState(false);
