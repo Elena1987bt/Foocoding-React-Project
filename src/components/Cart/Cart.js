@@ -2,10 +2,12 @@ import React from 'react';
 import SingleCartItem from './SingleCartItem/SingleCartItem';
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../../context/context';
+import { total } from '../../utils/calculateTotal';
 import './Cart.css';
 
 const Cart = () => {
-  const [{ cart }] = useAppContext();
+  const [{ cart }, dispatch] = useAppContext();
+  console.log(cart);
   return (
     <div className="cart container">
       <table>
@@ -31,13 +33,23 @@ const Cart = () => {
           </tr>
           <tr>
             <td>Total</td>
-            <td>$250</td>
+            <td>{total(cart)}</td>
           </tr>
         </table>
         <Link to="/checkout" className="checkout__btn">
           Proceed To Checkout
         </Link>
-        <Link className="clear__btn">Clear Cart</Link>
+        <Link
+          to=""
+          className="clear__btn"
+          onClick={() =>
+            dispatch({
+              type: 'CLEAR_CART',
+            })
+          }
+        >
+          Clear Cart
+        </Link>
       </div>
     </div>
   );

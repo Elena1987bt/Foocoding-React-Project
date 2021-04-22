@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SingleCartItem.css';
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../../../context/context';
+import { subTotal } from '../../../utils/calculateTotal';
+
 const SingleCartItem = ({ cartItem }) => {
-  const { image, price, title } = cartItem;
+  const { id, image, price, title } = cartItem;
+  console.log(id);
   const [{}, dispatch] = useAppContext();
+  const [quantity, setQuantity] = useState(1);
+
   return (
     <tr>
       <td>
@@ -14,7 +19,17 @@ const SingleCartItem = ({ cartItem }) => {
             <p>{title}</p>
             <span>Price: ${price}</span>
             <br />
-            <button className="removeButton">remove</button>
+            <button
+              className="removeButton"
+              onClick={() =>
+                dispatch({
+                  type: 'REMOVE_ITEM',
+                  payload: id,
+                })
+              }
+            >
+              remove
+            </button>
             <Link
               to="/products"
               className="removeButton"
@@ -31,9 +46,16 @@ const SingleCartItem = ({ cartItem }) => {
         </div>
       </td>
       <td>
-        <input type="number" value="1" min="1" />
+        <input
+          type="number"
+          value={quantity}
+          min={1}
+          onChange={(e) => {
+            setQuantity(e.target.value);
+          }}
+        />
       </td>
-      <td>${price}</td>
+      <td>${subTotal(quantity, price).toFixed(2)}</td>
     </tr>
   );
 };

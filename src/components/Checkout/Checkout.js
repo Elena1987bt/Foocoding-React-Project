@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SingleCartItem from '../../components/Cart/SingleCartItem/SingleCartItem';
+import { useAppContext } from '../../context/context';
 import './Checkout.css';
 
 const Checkout = () => {
+  const [{ cart }] = useAppContext();
   return (
     <div className="payment">
       <div className="container">
         <h2>
-          Checkout (<Link to="/cart"> 5 items</Link>)
+          Checkout (<Link to="/cart">{cart.length}</Link>)
         </h2>
 
         <div className="payment__section">
@@ -27,7 +29,9 @@ const Checkout = () => {
             <h3>Review items and delivery</h3>
           </div>
           <div className="payment__items">
-            <SingleCartItem />
+            {cart.map((cartItem) => (
+              <SingleCartItem key={cartItem.id} cartItem={cartItem} />
+            ))}
           </div>
         </div>
 

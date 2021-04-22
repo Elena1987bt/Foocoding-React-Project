@@ -6,7 +6,7 @@ export const initialState = {
   category: 'All',
   cart: [],
   total: 0,
-  amount: 0,
+  subtotal: [],
   user: null,
   error: 'Error! Try Again!',
 };

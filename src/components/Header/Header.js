@@ -12,7 +12,7 @@ import './Header.css';
 
 const Header = () => {
   const [show, setShow] = useState(false);
-  const [{}, dispatch] = useAppContext();
+  const [{ cart }, dispatch] = useAppContext();
   const navBar = useRef(null);
 
   const toggleButton = () => {
@@ -68,7 +68,7 @@ const Header = () => {
                 <Link
                   to="/products"
                   className="nav__link"
-                  onClickOut={toggleButton}
+                  onClickDown={toggleButton}
                   onClick={() =>
                     dispatch({
                       type: 'SET_ALL_PRODUCTS',
@@ -99,7 +99,7 @@ const Header = () => {
               <li className="nav__item">
                 <Link to="/cart" className="nav__icon" onClick={toggleButton}>
                   <LocalMallIcon />
-                  <small className="count">0</small>
+                  <small className="count">{cart.length}</small>
                 </Link>
               </li>
               <li className="nav__item">

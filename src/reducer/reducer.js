@@ -14,7 +14,17 @@ export const reducer = (state, action) => {
     case 'SET_ALL_PRODUCTS':
       return { ...state, category: payload, loading: true };
     case 'ADD_TO_CART':
+      if (state.cart.find((el) => el.id === payload.id)) {
+        return { ...state };
+      }
       return { ...state, cart: [...state.cart, payload], loading: false };
+    case 'REMOVE_ITEM':
+      return {
+        ...state,
+        cart: state.cart.filter((cartItem) => cartItem.id !== payload),
+      };
+    case 'CLEAR_CART':
+      return { ...state, cart: [] };
     case 'ERROR':
       return { ...state, loading: false };
     default:
