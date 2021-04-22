@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ProductDetail from '../components/ProductDetail/ProductDetail';
 import { useParams } from 'react-router-dom';
 import Carousel from '../components/Carousel/Carousel';
@@ -15,7 +15,6 @@ const ProductDetailPage = () => {
   const { id } = useParams();
   console.log(id);
   useEffect(() => {
-    // setLoading(true);
     dispatch({
       type: 'LOADING',
     });
@@ -23,15 +22,13 @@ const ProductDetailPage = () => {
       try {
         const res = await fetch(`https://fakestoreapi.com/products/${id}`);
         const data = await res.json();
-        // setProduct(data);
+
         dispatch({
           type: 'SET_PRODUCT',
           payload: data,
         });
-        // setLoading(false);
       } catch (err) {
         console.log(err);
-        // setLoading(false);
       }
     };
     fetchData();

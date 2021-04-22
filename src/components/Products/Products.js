@@ -25,7 +25,7 @@ const Products = () => {
       <div className="products__top container">
         <h1>All Products</h1>
         <form>
-          <select onChange={filterProduct}>
+          <select onChange={filterProduct} value={category}>
             <option value="All">All</option>
             <option value="electronics">electronics</option>
             <option value="jewelery">jewelery</option>

@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import image from '../../../assets/images/promotionOne.jpg';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SearchIcon from '@material-ui/icons/Search';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import TuneIcon from '@material-ui/icons/Tune';
+import { useAppContext } from '../../../context/context';
 import './SingleProduct.css';
 
 const SingleProduct = ({ bottomClass, product }) => {
-  // console.log(product);
   const { id, image, price, title } = product;
+  const [{}, dispatch] = useAppContext();
 
   const [favoriteIcon, setFavoriteIcon] = useState(false);
   return (
@@ -18,8 +18,14 @@ const SingleProduct = ({ bottomClass, product }) => {
       <div className="singleProduct__img">
         <img src={image} alt={title} />
         <Link
-          to={`/productDetail/${id}`}
+          to="/cart"
           className={`singleProduct__addCart ${bottomClass && 'bottom'}`}
+          onClick={() =>
+            dispatch({
+              type: 'ADD_TO_CART',
+              payload: product,
+            })
+          }
         >
           <ShoppingCartIcon className="singleProduct__Icon" />
         </Link>

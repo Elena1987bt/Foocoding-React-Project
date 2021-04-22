@@ -8,22 +8,33 @@
 tr {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
+  padding: 1rem;
 }
 .cart__info span {
   color: var(--pink);
 }
+td:first-child {
+  flex: 0.6;
+  text-align: left;
+}
+td:nth-child(2),
+td:nth-child(3) {
+  flex: 0.2;
+  text-align: center;
+}
 
+td:first-child p {
+  max-width: 300px;
+}
 td input {
   width: 3rem;
   height: 2rem;
   padding: 0.2rem;
-  margin-left: -11rem;
 }
 
-button {
+.removeButton {
   color: var(--lightPink);
+  font-family: inherit;
   outline: none;
   border: none;
   background-color: transparent;
@@ -31,8 +42,9 @@ button {
   font-size: 0.9rem;
   margin-top: 0.5rem;
   transition: all 0.5s ease-in;
+  margin-right: 0.7rem;
 }
-button:hover {
+.removeButton:hover {
   color: var(--pink);
 }
 
@@ -43,10 +55,6 @@ td img {
   object-fit: contain;
 }
 
-td:last-child {
-  text-align: right;
-}
-
 @media only screen and (max-width: 768px) {
   .cart__info {
     flex-direction: column;
@@ -54,16 +62,17 @@ td:last-child {
   .cart__info p {
     display: none;
   }
-  td input {
-    margin-left: -4rem;
+  td:nth-child(2),
+  td:nth-child(3) {
+    flex: 0.3;
   }
   td img {
     width: 7rem;
     height: 7rem;
+    margin-right: 0;
   }
-}
-@media only screen and (max-width: 568px) {
-  td input {
-    margin-left: 0;
+  td:first-child {
+    text-align: left;
+    flex: 0.4;
   }
 }

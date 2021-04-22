@@ -1,9 +1,11 @@
 import React from 'react';
 import SingleCartItem from './SingleCartItem/SingleCartItem';
 import { Link } from 'react-router-dom';
+import { useAppContext } from '../../context/context';
 import './Cart.css';
 
 const Cart = () => {
+  const [{ cart }] = useAppContext();
   return (
     <div className="cart container">
       <table>
@@ -12,9 +14,10 @@ const Cart = () => {
           <th>Quantity</th>
           <th>Subtotal</th>
         </tr>
-        <SingleCartItem />
-        <SingleCartItem />
-        <SingleCartItem />
+        {cart.length === 0 && <p> Your cart is empty. </p>}
+        {cart.map((cartItem) => (
+          <SingleCartItem key={cartItem.id} cartItem={cartItem} />
+        ))}
       </table>
       <div className="total__price">
         <table>
@@ -34,6 +37,7 @@ const Cart = () => {
         <Link to="/checkout" className="checkout__btn">
           Proceed To Checkout
         </Link>
+        <Link className="clear__btn">Clear Cart</Link>
       </div>
     </div>
   );

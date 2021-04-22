@@ -11,6 +11,10 @@ export const reducer = (state, action) => {
       return { ...state, product: payload, category: payload.category, loading: false };
     case 'FILTER_PRODUCTS':
       return { ...state, products: payload, loading: false };
+    case 'SET_ALL_PRODUCTS':
+      return { ...state, category: payload, loading: true };
+    case 'ADD_TO_CART':
+      return { ...state, cart: [...state.cart, payload], loading: false };
     case 'ERROR':
       return { ...state, loading: false };
     default:

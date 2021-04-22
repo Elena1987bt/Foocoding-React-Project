@@ -7,10 +7,12 @@ import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import { Link } from 'react-router-dom';
+import { useAppContext } from '../../context/context';
 import './Header.css';
 
 const Header = () => {
   const [show, setShow] = useState(false);
+  const [{}, dispatch] = useAppContext();
   const navBar = useRef(null);
 
   const toggleButton = () => {
@@ -57,35 +59,45 @@ const Header = () => {
             </div>
             <ul className="nav__list">
               <li className="nav__item">
-                <Link to="/" className="nav__link">
+                <Link to="/" className="nav__link" onClick={toggleButton}>
                   Home
                 </Link>
               </li>
 
               <li className="nav__item">
-                <Link to="/products" className="nav__link">
+                <Link
+                  to="/products"
+                  className="nav__link"
+                  onClickOut={toggleButton}
+                  onClick={() =>
+                    dispatch({
+                      type: 'SET_ALL_PRODUCTS',
+                      payload: 'All',
+                    })
+                  }
+                >
                   Products
                 </Link>
               </li>
 
               <li className="nav__item">
-                <Link to="/About" className="nav__link">
+                <Link to="/About" className="nav__link" onClick={toggleButton}>
                   About
                 </Link>
               </li>
 
               <li className="nav__item">
-                <Link to="/login" className="nav__icon">
+                <Link to="/login" className="nav__icon" onClick={toggleButton}>
                   <PersonOutlineIcon />
                 </Link>
               </li>
               <li className="nav__item">
-                <Link to="/" className="nav__icon">
+                <Link to="/" className="nav__icon" onClick={toggleButton}>
                   <FavoriteBorderIcon />
                 </Link>
               </li>
               <li className="nav__item">
-                <Link to="/cart" className="nav__icon">
+                <Link to="/cart" className="nav__icon" onClick={toggleButton}>
                   <LocalMallIcon />
                   <small className="count">0</small>
                 </Link>

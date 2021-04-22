@@ -5,7 +5,7 @@ import { useAppContext } from '../../context/context';
 import './ProductDetail.css';
 
 const ProductDetail = () => {
-  const [{ product }] = useAppContext();
+  const [{ product }, dispatch] = useAppContext();
   const { category, title, image, price, description } = product;
   return (
     <section className="productDetail">
@@ -51,10 +51,28 @@ const ProductDetail = () => {
           </form>
 
           <div className="productDetail__buttons">
-            <Link to="/products" className="productDetail__button">
+            <Link
+              to="/products"
+              className="productDetail__button"
+              onClick={() =>
+                dispatch({
+                  type: 'SET_ALL_PRODUCTS',
+                  payload: 'All',
+                })
+              }
+            >
               Back To Products
             </Link>
-            <Link to="/cart" className="productDetail__button">
+            <Link
+              to="/cart"
+              className="productDetail__button"
+              onClick={() =>
+                dispatch({
+                  type: 'ADD_TO_CART',
+                  payload: product,
+                })
+              }
+            >
               Add To Cart
             </Link>
           </div>
