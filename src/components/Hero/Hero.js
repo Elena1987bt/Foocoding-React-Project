@@ -5,7 +5,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import HeroSlide from './HeroSlide/HeroSlide';
 import hero1 from '../../assets/images/hero1.jpg';
 import hero6 from '../../assets/images/hero6.jpeg';
-//import hero7 from '../../assets/images/hero7.jpg';
 import hero4 from '../../assets/images/hero4.jpg';
 
 import './Hero.css';

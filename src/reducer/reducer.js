@@ -23,22 +23,36 @@ export const reducer = (state, action) => {
         ...state,
         cart: state.cart.filter((cartItem) => cartItem.id !== payload),
       };
-    case 'CLEAR_CART':
-      return { ...state, cart: [] };
+
+    case 'TOGGLE_AMOUNT':
+      let tempCart = state.cart
+        .map((cartItem) => {
+          if (cartItem.id === payload.id) {
+            if (payload.type === 'inc') {
+              return { ...cartItem, amount: cartItem.amount + 1 };
+            }
+            if (payload.type === 'dec') {
+              return { ...cartItem, amount: cartItem.amount - 1 };
+            }
+          }
+          return cartItem;
+        })
+        .filter((cartItem) => cartItem.amount !== 0);
+      return { ...state, cart: tempCart };
+    case 'GET_TOTALS':
+      let total = state.cart.reduce((cartTotal, cartItem) => {
+        const { price, amount } = cartItem;
+        const itemTotal = price * amount;
+        cartTotal += itemTotal;
+        return cartTotal;
+      }, 0);
+      total = parseFloat(total.toFixed(2));
+
+      return { ...state, total: total };
+
     case 'ERROR':
       return { ...state, loading: false };
     default:
       return state;
   }
 };
-// function addNewItem(state, task) {
-//   const list = [...state.list];
-//   const newItem = {
-//     itemId: list.length + 1,
-//     task: task,
-//     completed: false,
-//   };
-//   return {
-//     list: [...state.list, newItem],
-//   };
-// }

@@ -10,7 +10,7 @@ table {
 .cart__titles {
   background-color: var(--lightPink);
 }
-p {
+.empty {
   color: var(--lightPink);
   margin-top: 1rem;
 }

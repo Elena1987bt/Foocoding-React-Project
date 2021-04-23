@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useAppContext } from '../context/context';
 import axios from 'axios';
 
 export default function useFetchData(category = 'All') {
-  const [{ products, relatedProducts }, dispatch] = useAppContext();
+  const [{ products }, dispatch] = useAppContext();
   let url = 'https://fakestoreapi.com/products';
   if (category === 'All') {
     url = 'https://fakestoreapi.com/products';
@@ -15,8 +15,13 @@ export default function useFetchData(category = 'All') {
     try {
       const res = await axios.get(url);
       const data = await res.data;
-      console.log(data);
-      category === 'all' ? fetchAll(data) : fetchByCategory(data);
+      const finalData = data.map((el) => {
+        return {
+          ...el,
+          amount: 1,
+        };
+      });
+      category === 'all' ? fetchAll(finalData) : fetchByCategory(finalData);
     } catch (err) {
       console.log(err);
       dispatch({

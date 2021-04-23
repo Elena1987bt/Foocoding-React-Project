@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import './SingleCartItem.css';
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../../../context/context';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 import { subTotal } from '../../../utils/calculateTotal';
 
 const SingleCartItem = ({ cartItem }) => {
-  const { id, image, price, title } = cartItem;
-  console.log(id);
+  const { id, image, price, title, amount } = cartItem;
   const [{}, dispatch] = useAppContext();
-  const [quantity, setQuantity] = useState(1);
+
+  const toggleAmount = (id, type) => {
+    dispatch({ type: 'TOGGLE_AMOUNT', payload: { id, type } });
+  };
 
   return (
     <tr>
@@ -45,17 +49,16 @@ const SingleCartItem = ({ cartItem }) => {
           </div>
         </div>
       </td>
-      <td>
-        <input
-          type="number"
-          value={quantity}
-          min={1}
-          onChange={(e) => {
-            setQuantity(e.target.value);
-          }}
-        />
+      <td className="buttons__group">
+        <button onClick={() => toggleAmount(id, 'inc')}>
+          <AddIcon />
+        </button>
+        <p className="amount">{amount}</p>
+        <button onClick={() => toggleAmount(id, 'dec')}>
+          <RemoveIcon />
+        </button>
       </td>
-      <td>${subTotal(quantity, price).toFixed(2)}</td>
+      <td>${subTotal(price, amount)}</td>
     </tr>
   );
 };

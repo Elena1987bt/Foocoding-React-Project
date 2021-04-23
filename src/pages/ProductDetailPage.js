@@ -22,10 +22,11 @@ const ProductDetailPage = () => {
       try {
         const res = await fetch(`https://fakestoreapi.com/products/${id}`);
         const data = await res.json();
+        const finalData = { ...data, amount: 1 };
 
         dispatch({
           type: 'SET_PRODUCT',
-          payload: data,
+          payload: finalData,
         });
       } catch (err) {
         console.log(err);

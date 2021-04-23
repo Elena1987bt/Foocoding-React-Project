@@ -54,6 +54,29 @@ td img {
   margin-right: 1rem;
   object-fit: contain;
 }
+.buttons__group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttons__group button {
+  border-radius: 50%;
+  border: 1px solid var(--lightPink);
+  outline: none;
+  background-color: var(--white);
+  color: var(--lightPink);
+}
+.buttons__group button:hover {
+  color: var(--pink);
+  border-color: var(--pink);
+  cursor: pointer;
+}
+.buttons__group > * {
+  margin-right: 0.5rem;
+}
+.buttons__group button:last-child {
+  margin-right: -1rem;
+}
 
 @media only screen and (max-width: 768px) {
   .cart__info {

@@ -21,7 +21,6 @@ const Header = () => {
   const scrollAd = () => {
     const scrollHeight = window.pageYOffset;
     const navHeight = navBar.current.getBoundingClientRect().height;
-    // console.log(navHeight);
     if (scrollHeight > navHeight) {
       navBar.current.classList.add('fix__nav');
     } else {
@@ -103,7 +102,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav__item">
-                <Link to="/search" className="nav__icon">
+                <Link to="/" className="nav__icon">
                   <SearchIcon />
                 </Link>
               </li>

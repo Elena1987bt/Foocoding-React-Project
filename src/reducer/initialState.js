@@ -5,6 +5,7 @@ export const initialState = {
   product: {},
   category: 'All',
   cart: [],
+  amountTotal: 0,
   total: 0,
   subtotal: [],
   user: null,
