@@ -12,7 +12,7 @@ import './Header.css';
 
 const Header = () => {
   const [show, setShow] = useState(false);
-  const [{ cart }, dispatch] = useAppContext();
+  const [{ cart, amountTotal }, dispatch] = useAppContext();
   const navBar = useRef(null);
 
   const toggleButton = () => {
@@ -98,7 +98,7 @@ const Header = () => {
               <li className="nav__item">
                 <Link to="/cart" className="nav__icon" onClick={toggleButton}>
                   <LocalMallIcon />
-                  <small className="count">{cart.length}</small>
+                  <small className="count">{amountTotal}</small>
                 </Link>
               </li>
               <li className="nav__item">
