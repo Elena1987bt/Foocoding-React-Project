@@ -11,7 +11,6 @@ import './SingleProduct.css';
 const SingleProduct = ({ bottomClass, product }) => {
   const { id, image, price, title } = product;
   const [{}, dispatch] = useAppContext();
-
   const [favoriteIcon, setFavoriteIcon] = useState(false);
   return (
     <div className="singleProduct">

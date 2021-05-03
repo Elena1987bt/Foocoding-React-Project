@@ -1,51 +1,29 @@
-import React, { useEffect } from 'react';
 import ProductDetail from '../components/ProductDetail/ProductDetail';
 import { useParams } from 'react-router-dom';
 import Carousel from '../components/Carousel/Carousel';
 import SingleProduct from '../components/Products/SingleProduct/SingleProduct';
-import Loading from '../components/Loading/Loading';
-import useFetchData from '../hooks/useFetch';
+import useFilterByCategory from '../hooks/useFilterByCategories';
 import { useAppContext } from '../context/context';
 
 const ProductDetailPage = () => {
-  const [{ product, loading }, dispatch] = useAppContext();
-  const [relatedProducts] = useFetchData(product.category);
-  console.log(relatedProducts);
-
+  const [{ products }] = useAppContext();
   const { id } = useParams();
-  console.log(id);
-  useEffect(() => {
-    dispatch({
-      type: 'LOADING',
-    });
-    const fetchData = async () => {
-      try {
-        const res = await fetch(`https://fakestoreapi.com/products/${id}`);
-        const data = await res.json();
-        const finalData = { ...data, amount: 1 };
+  const product = products.find((el) => el.id === parseInt(id));
+  const category = product.category;
 
-        dispatch({
-          type: 'SET_PRODUCT',
-          payload: finalData,
-        });
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchData();
-  }, [id, dispatch]);
-  console.log(product);
+  console.log(category);
+  const filterProducts = useFilterByCategory(category, products);
+  console.log(filterProducts);
 
-  if (loading) return <Loading />;
   return (
     <div>
-      <ProductDetail />
+      <ProductDetail product={product} />
       <Carousel
         Slide={SingleProduct}
         title="Related Products"
         slidesToShow={3}
         slideToShowMobile={1}
-        products={relatedProducts}
+        products={filterProducts}
       />
     </div>
   );

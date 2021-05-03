@@ -5,7 +5,7 @@ import { useAppContext } from '../../context/context';
 import './Checkout.css';
 
 const Checkout = () => {
-  const [{ cart }] = useAppContext();
+  const [{ cart, total }] = useAppContext();
   return (
     <div className="payment">
       <div className="container">
@@ -42,7 +42,7 @@ const Checkout = () => {
           <div className="payment__details">
             <form>
               <div className="payment__priceContainer">
-                <h3>Order Total: $250</h3>
+                <h3>Order Total: ${total}</h3>
                 <button className="checkout__btn">Buy Now</button>
               </div>
             </form>

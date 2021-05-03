@@ -1,20 +1,22 @@
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowDropDown';
 import SingleProduct from './SingleProduct/SingleProduct';
 import Loading from '../Loading/Loading';
 import { useAppContext } from '../../context/context';
 import './Products.css';
 import useFetchData from '../../hooks/useFetch';
+import useFilterByCategory from '../../hooks/useFilterByCategories';
 
 const Products = () => {
   const [{ category, loading }, dispatch] = useAppContext();
-  const [products] = useFetchData(category);
+  const products = useFetchData();
+  const filterProducts = useFilterByCategory(category, products);
 
   const filterProduct = (e) => {
     const category = e.target.value;
     dispatch({
-      type: 'SET_CATEGORY',
-      payload: category,
+      type: 'FILTER_PRODUCTS',
+      payload: { category, products: products },
     });
   };
 
@@ -38,7 +40,7 @@ const Products = () => {
       </div>
 
       <div className="products__center container">
-        {products.map((product) => (
+        {filterProducts.map((product) => (
           <SingleProduct key={product.id} product={product} />
         ))}
       </div>

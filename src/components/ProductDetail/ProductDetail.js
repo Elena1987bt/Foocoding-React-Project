@@ -4,8 +4,8 @@ import { useAppContext } from '../../context/context';
 
 import './ProductDetail.css';
 
-const ProductDetail = () => {
-  const [{ product }, dispatch] = useAppContext();
+const ProductDetail = ({ product }) => {
+  const [{}, dispatch] = useAppContext();
   const { category, title, image, price, description } = product;
 
   return (
