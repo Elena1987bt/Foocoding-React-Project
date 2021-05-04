@@ -11,6 +11,14 @@ export const reducer = (state, action) => {
     //   return { ...state, product: payload, category: payload.category, loading: false };
     case 'SET_ALL_PRODUCTS':
       return { ...state, category: payload, loading: true };
+    case 'ADD_TO_FAVORITES':
+      if (state.favoriteProducts.find((el) => el.id === payload.id)) {
+        return {
+          ...state,
+          favoriteProducts: state.favoriteProducts.filter((el) => el.id !== payload.id),
+        };
+      }
+      return { ...state, favoriteProducts: [...state.favoriteProducts, payload] };
     case 'ADD_TO_CART':
       if (state.cart.find((el) => el.id === payload.id)) {
         return { ...state };

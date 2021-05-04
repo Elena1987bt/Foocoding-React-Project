@@ -154,6 +154,7 @@ nav .container {
   .nav__item {
     padding: 1rem;
   }
+
   .nav__menu .nav__logo {
     font-size: 1.8rem;
     font-weight: 500;
@@ -162,5 +163,9 @@ nav .container {
 
   .nav__menu .nav__logo span {
     color: var(--white);
+  }
+
+  .favoriteProducts {
+    position: relative;
   }
 }

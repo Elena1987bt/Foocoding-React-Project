@@ -2,6 +2,7 @@ export const initialState = {
   loading: false,
   products: [],
   relatedProducts: [],
+  favoriteProducts: [],
   product: {},
   category: 'All',
   cart: [],

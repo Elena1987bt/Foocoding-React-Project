@@ -3,16 +3,18 @@ import Adverts from '../Adverts/Adverts';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
 import SearchIcon from '@material-ui/icons/Search';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../../context/context';
 import './Header.css';
+import FavoriteProducts from '../FavoriteProducts/FavoriteProducts';
 
 const Header = () => {
   const [show, setShow] = useState(false);
-  const [{ amountTotal }, dispatch] = useAppContext();
+  const [{ amountTotal, favoriteProducts }] = useAppContext();
   const navBar = useRef(null);
 
   const toggleButton = () => {
@@ -90,10 +92,15 @@ const Header = () => {
                   <PersonOutlineIcon />
                 </Link>
               </li>
-              <li className="nav__item">
-                <Link to="/" className="nav__icon" onClick={toggleButton}>
-                  <FavoriteBorderIcon />
+              <li
+                className="nav__item favoriteProducts"
+                onMouseEnter={() => setShow(true)}
+                onMouseLeave={() => setShow(false)}
+              >
+                <Link to="/" className="nav__icon favoriteProducts__icon" onClick={toggleButton}>
+                  {favoriteProducts.length === 0 ? <FavoriteBorderIcon /> : <FavoriteIcon />}
                 </Link>
+                {show && <FavoriteProducts />}
               </li>
               <li className="nav__item">
                 <Link to="/cart" className="nav__icon" onClick={toggleButton}>
