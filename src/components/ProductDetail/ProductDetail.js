@@ -37,7 +37,7 @@ const ProductDetail = ({ product }) => {
           <form>
             <div>
               <select>
-                <option value="Select Size" defaultValue disabled>
+                <option value="Select Size" defaultValue>
                   Select Size
                 </option>
                 <option value="1">32</option>

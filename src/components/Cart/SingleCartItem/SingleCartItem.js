@@ -58,7 +58,7 @@ const SingleCartItem = ({ cartItem }) => {
           <RemoveIcon />
         </button>
       </td>
-      <td>${subTotal(price, amount)}</td>
+      <td>${subTotal(price, amount).toFixed(2)}</td>
     </tr>
   );
 };

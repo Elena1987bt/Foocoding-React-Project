@@ -25,7 +25,7 @@ form {
 form span {
   position: absolute;
   top: 50%;
-  right: 1rem;
+  right: 0.5rem;
   transform: translateY(-50%);
   font-size: 2rem;
   z-index: 0;

@@ -13,22 +13,30 @@ const Cart = () => {
   return (
     <div className="cart container">
       <table>
-        <tr className="cart__titles">
-          <th>Product</th>
-          <th>Quantity</th>
-          <th>Subtotal</th>
-        </tr>
-        {cart.length === 0 && <p className="empty"> Your cart is empty. </p>}
-        {cart.map((cartItem) => (
-          <SingleCartItem key={cartItem.id} cartItem={cartItem} />
-        ))}
+        <tbody>
+          <tr className="cart__titles">
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+          </tr>
+          {cart.length === 0 && (
+            <tr className="empty">
+              <td> Your cart is empty.</td>
+            </tr>
+          )}
+          {cart.map((cartItem) => (
+            <SingleCartItem key={cartItem.id} cartItem={cartItem} />
+          ))}
+        </tbody>
       </table>
       <div className="total__price">
         <table>
-          <tr>
-            <td>Total</td>
-            <td>${total}</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>Total</td>
+              <td>${total}</td>
+            </tr>
+          </tbody>
         </table>
         <Link to="/checkout" className="checkout__btn">
           Proceed To Checkout

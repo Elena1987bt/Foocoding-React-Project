@@ -1,5 +1,5 @@
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowDropDown';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import SingleProduct from './SingleProduct/SingleProduct';
 import Loading from '../Loading/Loading';
 import { useAppContext } from '../../context/context';

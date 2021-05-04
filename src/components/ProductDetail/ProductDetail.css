@@ -68,14 +68,15 @@
   outline: none;
 }
 
-.productDetail form {
+.productDetail__right form {
   margin-bottom: 2rem;
+  max-width: 3rem;
 }
 
 .productDetail form span {
   position: absolute;
   top: -0.8rem;
-  right: 17rem;
+  right: -19rem;
   transform: translateY(-50%);
   font-size: 2rem;
   z-index: 0;
@@ -95,7 +96,6 @@
   color: #fff;
   border-radius: 3rem;
   margin-right: 0.5rem;
-
   transition: background-color 0.4s ease-in-out;
 }
 .productDetail__button:hover {
@@ -141,7 +141,7 @@
     width: 10rem;
   }
   .productDetail form span {
-    right: 6.5rem;
+    right: -6.5rem;
   }
 }
 
@@ -171,7 +171,6 @@
     width: 15rem;
   }
   .productDetail form span {
-    right: 18rem;
     top: -0.5;
   }
 }
