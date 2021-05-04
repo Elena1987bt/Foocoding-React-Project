@@ -1,7 +1,7 @@
 .favoritePanel {
   position: absolute;
   right: 2rem;
-  top: 5.52rem;
+  top: 5.54rem;
   z-index: 100;
   padding: 2rem 1rem;
   width: 24rem;
@@ -13,11 +13,20 @@
 .favoriteProducts__list li {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 1rem;
 }
 .favoriteProducts__list img {
   width: 3rem;
   object-fit: contain;
-  margin-right: 3rem;
+  margin-right: 2rem;
   margin-left: 1rem;
+}
+.favoriteProducts__button {
+  border: none;
+  background-color: transparent;
+}
+.favoriteProducts__button:hover {
+  cursor: pointer;
+  color: var(--pink);
 }

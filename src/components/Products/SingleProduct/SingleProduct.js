@@ -9,9 +9,9 @@ import { useAppContext } from '../../../context/context';
 import './SingleProduct.css';
 
 const SingleProduct = ({ bottomClass, product }) => {
-  const { id, image, price, title } = product;
+  const { id, image, price, title, isFavorite } = product;
   const [{}, dispatch] = useAppContext();
-  const [favoriteIcon, setFavoriteIcon] = useState(false);
+
   return (
     <div className="singleProduct">
       <div className="singleProduct__img">
@@ -35,14 +35,20 @@ const SingleProduct = ({ bottomClass, product }) => {
           </span>
           <span
             onClick={() => {
-              setFavoriteIcon(!favoriteIcon);
-              dispatch({
-                type: 'ADD_TO_FAVORITES',
-                payload: product,
-              });
+              if (!isFavorite) {
+                dispatch({
+                  type: 'ADD_TO_FAVORITES',
+                  payload: product,
+                });
+              } else {
+                dispatch({
+                  type: 'REMOVE_FROM_FAVORITES',
+                  payload: product,
+                });
+              }
             }}
           >
-            {!favoriteIcon ? (
+            {!isFavorite ? (
               <FavoriteBorderIcon className="singleProduct__Icon" />
             ) : (
               <FavoriteIcon className="singleProduct__Icon" />

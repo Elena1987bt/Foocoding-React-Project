@@ -13,12 +13,13 @@ import './Header.css';
 import FavoriteProducts from '../FavoriteProducts/FavoriteProducts';
 
 const Header = () => {
-  const [show, setShow] = useState(false);
+  const [showNav, setShowNav] = useState(false);
+  const [showLikes, setShowLikes] = useState(false);
   const [{ amountTotal, favoriteProducts }] = useAppContext();
   const navBar = useRef(null);
 
   const toggleButton = () => {
-    setShow(!show);
+    setShowNav(!showNav);
   };
   const scrollAd = () => {
     const scrollHeight = window.pageYOffset;
@@ -44,12 +45,12 @@ const Header = () => {
             <Link to="/" className="nav__logo">
               Sho<span>p</span>ify
             </Link>
-            <button className={`nav__toggleBtn ${show && 'hide'}`} onClick={toggleButton}>
+            <button className={`nav__toggleBtn ${showNav && 'hide'}`} onClick={toggleButton}>
               <MenuIcon className="MenuIcon" />
             </button>
           </div>
 
-          <div className={`nav__menu ${show && 'show'}`}>
+          <div className={`nav__menu ${showNav && 'show'}`}>
             <div className="nav__topMobile">
               <Link to="/" className="nav__logo">
                 Sho<span>p</span>ify
@@ -92,15 +93,11 @@ const Header = () => {
                   <PersonOutlineIcon />
                 </Link>
               </li>
-              <li
-                className="nav__item favoriteProducts"
-                onMouseEnter={() => setShow(true)}
-                onMouseLeave={() => setShow(false)}
-              >
-                <Link to="/" className="nav__icon favoriteProducts__icon" onClick={toggleButton}>
+              <li className="nav__item favoriteProducts" onMouseEnter={() => setShowLikes(true)}>
+                <Link className="nav__icon favoriteProducts__icon">
                   {favoriteProducts.length === 0 ? <FavoriteBorderIcon /> : <FavoriteIcon />}
                 </Link>
-                {show && <FavoriteProducts />}
+                {showLikes && <FavoriteProducts onMouseLeave={() => setShowLikes(false)} />}
               </li>
               <li className="nav__item">
                 <Link to="/cart" className="nav__icon" onClick={toggleButton}>

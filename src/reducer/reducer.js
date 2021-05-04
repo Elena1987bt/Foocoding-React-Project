@@ -12,13 +12,36 @@ export const reducer = (state, action) => {
     case 'SET_ALL_PRODUCTS':
       return { ...state, category: payload, loading: true };
     case 'ADD_TO_FAVORITES':
-      if (state.favoriteProducts.find((el) => el.id === payload.id)) {
-        return {
-          ...state,
-          favoriteProducts: state.favoriteProducts.filter((el) => el.id !== payload.id),
-        };
-      }
-      return { ...state, favoriteProducts: [...state.favoriteProducts, payload] };
+      // if (state.favoriteProducts.find((el) => el.id === payload.id)) {
+      //   return {
+      //     ...state,
+      //     // favoriteIcon: false,
+      //     favoriteProducts: state.favoriteProducts.filter((el) => el.id !== payload.id),
+      //   };
+      // }
+      return {
+        ...state,
+        favoriteProducts: [...state.favoriteProducts, payload],
+        products: state.products.map((product) => {
+          if (product.id === payload.id) {
+            product.isFavorite = true;
+          }
+          return product;
+        }),
+      };
+    case 'REMOVE_FROM_FAVORITES':
+      return {
+        ...state,
+        favoriteProducts: state.favoriteProducts.filter(
+          (favoriteProduct) => favoriteProduct.id !== payload.id,
+        ),
+        products: state.products.map((product) => {
+          if (product.id === payload.id) {
+            product.isFavorite = false;
+          }
+          return product;
+        }),
+      };
     case 'ADD_TO_CART':
       if (state.cart.find((el) => el.id === payload.id)) {
         return { ...state };

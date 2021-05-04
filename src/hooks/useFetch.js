@@ -14,6 +14,7 @@ export default function useFetchData() {
         return {
           ...el,
           amount: 1,
+          isFavorite:false,
         };
       });
       dispatch({
