@@ -4,12 +4,13 @@ import SingleProduct from './SingleProduct/SingleProduct';
 import Loading from '../Loading/Loading';
 import { useAppContext } from '../../context/context';
 import './Products.css';
-import useFetchData from '../../hooks/useFetch';
+import useFetchData from '../../hooks/useFetchOnce';
 import useFilterByCategory from '../../hooks/useFilterByCategories';
 
 const Products = () => {
   const [{ category, loading }, dispatch] = useAppContext();
-  const products = useFetchData();
+  const products = useFetchData('https://fakestoreapi.com/products');
+
   const filterProducts = useFilterByCategory(category, products);
 
   const filterProduct = (e) => {

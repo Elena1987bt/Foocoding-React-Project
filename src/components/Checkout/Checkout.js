@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SingleCartItem from '../../components/Cart/SingleCartItem/SingleCartItem';
 import { useAppContext } from '../../context/context';
 import './Checkout.css';
 
 const Checkout = () => {
-  const [{ cart, total }] = useAppContext();
+  const [{ cart, total, amountTotal }, dispatch] = useAppContext();
+  useEffect(() => {
+    dispatch({ type: 'GET_TOTALS' });
+  }, [cart, dispatch]);
   return (
     <div className="payment">
       <div className="container">
         <h2>
-          Checkout (<Link to="/cart">{cart.length}</Link>)
+          Checkout (<Link to="/cart">{amountTotal}</Link>)
         </h2>
 
         <div className="payment__section">
@@ -28,11 +31,13 @@ const Checkout = () => {
           <div className="payment__title">
             <h3>Review items and delivery</h3>
           </div>
-          <div className="payment__items">
-            {cart.map((cartItem) => (
-              <SingleCartItem key={cartItem.id} cartItem={cartItem} />
-            ))}
-          </div>
+          <table className="payment__items">
+            <tbody>
+              {cart.map((cartItem) => (
+                <SingleCartItem key={cartItem.id} cartItem={cartItem} />
+              ))}
+            </tbody>
+          </table>
         </div>
 
         <div className="payment__section">

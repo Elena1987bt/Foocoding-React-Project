@@ -15,7 +15,7 @@ import FavoriteProducts from '../FavoriteProducts/FavoriteProducts';
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const [showLikes, setShowLikes] = useState(false);
-  const [{ amountTotal, favoriteProducts }] = useAppContext();
+  const [{ amountTotal, favoriteProducts }, dispatch] = useAppContext();
   const navBar = useRef(null);
 
   const toggleButton = () => {
@@ -70,13 +70,13 @@ const Header = () => {
                 <Link
                   to="/products"
                   className="nav__link"
-                  onClick={toggleButton}
-                  // onClick={() =>
-                  //   dispatch({
-                  //     type: 'SET_ALL_PRODUCTS',
-                  //     payload: 'All',
-                  //   })
-                  // }
+                  onClick={() => {
+                    toggleButton();
+                    dispatch({
+                      type: 'SET_ALL_PRODUCTS',
+                      payload: 'All',
+                    });
+                  }}
                 >
                   Products
                 </Link>
@@ -93,8 +93,12 @@ const Header = () => {
                   <PersonOutlineIcon />
                 </Link>
               </li>
-              <li className="nav__item favoriteProducts" onMouseEnter={() => setShowLikes(true)}>
-                <Link className="nav__icon favoriteProducts__icon">
+              <li className="nav__item favoriteProducts">
+                <Link
+                  to="#"
+                  className="nav__icon favoriteProducts__icon"
+                  onMouseEnter={() => setShowLikes(true)}
+                >
                   {favoriteProducts.length === 0 ? <FavoriteBorderIcon /> : <FavoriteIcon />}
                 </Link>
                 {showLikes && <FavoriteProducts onMouseLeave={() => setShowLikes(false)} />}

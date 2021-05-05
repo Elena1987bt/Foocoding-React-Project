@@ -92,6 +92,9 @@ nav .container {
 .nav__icon:hover {
   color: var(--pink);
 }
+.favoriteProducts {
+  position: relative;
+}
 
 @media only screen and (max-width: 768px) {
   nav .container {
@@ -163,9 +166,5 @@ nav .container {
 
   .nav__menu .nav__logo span {
     color: var(--white);
-  }
-
-  .favoriteProducts {
-    position: relative;
   }
 }

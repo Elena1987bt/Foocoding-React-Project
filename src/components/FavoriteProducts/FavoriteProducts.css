@@ -1,7 +1,7 @@
 .favoritePanel {
   position: absolute;
-  right: 2rem;
-  top: 5.54rem;
+  left: -15rem;
+  top: 3.57rem;
   z-index: 100;
   padding: 2rem 1rem;
   width: 24rem;
