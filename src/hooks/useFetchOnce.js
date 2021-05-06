@@ -30,6 +30,7 @@ export default function useFetchData(url) {
     dispatch({
       type: 'LOADING',
     });
+
     fetchData();
   }, [dispatch, fetchData]);
   return products;
