@@ -1,13 +1,17 @@
 import React from 'react';
 import { useAppContext } from '../../context/context';
+import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import CloseIcon from '@material-ui/icons/Close';
 import './FavoriteProducts.css';
 
-const FavoriteProducts = ({ onMouseLeave }) => {
+const FavoriteProducts = ({ onClick }) => {
   const [{ favoriteProducts }, dispatch] = useAppContext();
 
   return (
-    <div className="favoritePanel" onMouseLeave={onMouseLeave}>
+    <div className="favoritePanel">
+      <button onClick={onClick} className="close__btn">
+        <CloseIcon />
+      </button>
       <ul className="favoriteProducts__list">
         {favoriteProducts.length > 0 ? (
           favoriteProducts.map((product) => (
@@ -26,7 +30,7 @@ const FavoriteProducts = ({ onMouseLeave }) => {
                   })
                 }
               >
-                <CloseIcon />
+                <RemoveCircleOutlineIcon />
               </button>
             </li>
           ))

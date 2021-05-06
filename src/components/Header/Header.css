@@ -92,7 +92,7 @@ nav .container {
 .nav__icon:hover {
   color: var(--pink);
 }
-.favoriteProducts {
+.favoriteProducts__icon {
   position: relative;
 }
 
@@ -118,6 +118,7 @@ nav .container {
   }
   .nav__toggleBtn > .MenuIcon {
     color: var(--black);
+    margin-left: 2rem;
   }
 
   .hide {
@@ -131,7 +132,9 @@ nav .container {
     background-color: var(--pink);
     padding: 1.6rem 2rem;
   }
-
+  .navTop__buttons {
+    display: flex;
+  }
   .nav__menu {
     position: fixed;
     top: 0;

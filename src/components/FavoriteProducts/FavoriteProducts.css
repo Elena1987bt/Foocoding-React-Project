@@ -1,10 +1,12 @@
 .favoritePanel {
   position: absolute;
-  left: -15rem;
-  top: 3.57rem;
+  right: 3rem;
+  top: 5.5rem;
   z-index: 100;
-  padding: 2rem 1rem;
+  padding: 1rem;
   width: 24rem;
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
   box-shadow: 0 0.8rem 5rem 2rem rgb(101 90 86 / 10%);
   transition: all 0.5s 0.2s;
@@ -22,11 +24,27 @@
   margin-right: 2rem;
   margin-left: 1rem;
 }
-.favoriteProducts__button {
+p {
+  margin-top: -0.5rem;
+}
+.favoriteProducts__button,
+.close__btn {
   border: none;
   background-color: transparent;
+}
+.close__btn {
+  font-size: 1rem;
+  color: var(--lightPink);
+  align-self: flex-end;
 }
 .favoriteProducts__button:hover {
   cursor: pointer;
   color: var(--pink);
+}
+@media (max-width: 900px) {
+  .favoritePanel {
+    top: 6rem;
+    right: 0rem;
+    width: 100%;
+  }
 }

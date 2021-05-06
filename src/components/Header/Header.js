@@ -2,24 +2,24 @@ import React, { useState, useEffect, useRef } from 'react';
 import Adverts from '../Adverts/Adverts';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
 import SearchIcon from '@material-ui/icons/Search';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../../context/context';
 import './Header.css';
-import FavoriteProducts from '../FavoriteProducts/FavoriteProducts';
+import FavoriteIconBtn from '../_favoriteIcon/FavoriteIconBtn';
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
+  const [showFavoriteIcon, setShowFavoriteIcon] = useState(true);
   const [showLikes, setShowLikes] = useState(false);
-  const [{ amountTotal, favoriteProducts }, dispatch] = useAppContext();
+  const [{ amountTotal }, dispatch] = useAppContext();
   const navBar = useRef(null);
 
   const toggleButton = () => {
     setShowNav(!showNav);
+    setShowFavoriteIcon(!showFavoriteIcon);
   };
   const scrollAd = () => {
     const scrollHeight = window.pageYOffset;
@@ -65,7 +65,6 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-
               <li className="nav__item">
                 <Link
                   to="/products"
@@ -81,27 +80,18 @@ const Header = () => {
                   Products
                 </Link>
               </li>
-
               <li className="nav__item">
                 <Link to="/About" className="nav__link" onClick={toggleButton}>
                   About
                 </Link>
               </li>
-
               <li className="nav__item">
                 <Link to="/login" className="nav__icon" onClick={toggleButton}>
                   <PersonOutlineIcon />
                 </Link>
               </li>
-              <li className="nav__item favoriteProducts">
-                <Link
-                  to="#"
-                  className="nav__icon favoriteProducts__icon"
-                  onMouseEnter={() => setShowLikes(true)}
-                >
-                  {favoriteProducts.length === 0 ? <FavoriteBorderIcon /> : <FavoriteIcon />}
-                </Link>
-                {showLikes && <FavoriteProducts onMouseLeave={() => setShowLikes(false)} />}
+              <li className="nav__item">
+                <FavoriteIconBtn showLikes={showLikes} setShowLikes={setShowLikes} />
               </li>
               <li className="nav__item">
                 <Link to="/cart" className="nav__icon" onClick={toggleButton}>
