@@ -10,14 +10,11 @@ import useFilterByCategory from '../../hooks/useFilterByCategories';
 
 const Products = () => {
   const [{ category, loading, products }, dispatch] = useAppContext();
-  console.log(products);
   const hasAlreadyLoadedProducts = Boolean(products.length > 0);
-  console.log(hasAlreadyLoadedProducts);
   const data = useFetchData({
     url: 'https://fakestoreapi.com/products',
     options: { disable: hasAlreadyLoadedProducts },
   });
-  console.log(data);
 
   const [localProducts, setLocalProducts] = useState(products);
 

@@ -26,7 +26,7 @@ export default function useFetchData({ url, options = { disable: false } }) {
     } catch (err) {
       console.log(err);
     }
-  }, [url, dispatch]);
+  }, [url, dispatch, favoriteProducts]);
 
   useEffect(() => {
     dispatch({

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SearchIcon from '@material-ui/icons/Search';

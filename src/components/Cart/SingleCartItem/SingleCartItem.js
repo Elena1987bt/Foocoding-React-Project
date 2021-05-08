@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './SingleCartItem.css';
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../../../context/context';
