@@ -2,7 +2,7 @@ export const reducer = (state, action) => {
   const { payload } = action;
   switch (action.type) {
     case 'LOADING':
-      return { ...state, loading: true };
+      return { ...state, loading: payload };
     case 'DISPLAY_PRODUCTS':
       return { ...state, products: payload, loading: false };
     case 'FILTER_PRODUCTS':
@@ -10,7 +10,7 @@ export const reducer = (state, action) => {
     case 'SET_PRODUCT':
       return { ...state, product: payload, category: payload.category, loading: false };
     case 'SET_ALL_PRODUCTS':
-      return { ...state, category: payload, loading: true };
+      return { ...state, category: payload, loading: false };
     case 'ADD_TO_FAVORITES':
       if (state.favoriteProducts.find((el) => el.id === payload.id)) {
         return { ...state };

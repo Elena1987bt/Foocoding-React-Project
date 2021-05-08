@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import SingleProduct from './SingleProduct/SingleProduct';
@@ -8,10 +9,28 @@ import useFetchData from '../../hooks/useFetchOnce';
 import useFilterByCategory from '../../hooks/useFilterByCategories';
 
 const Products = () => {
-  const [{ category, loading }, dispatch] = useAppContext();
-  const products = useFetchData('https://fakestoreapi.com/products');
+  const [{ category, loading, products }, dispatch] = useAppContext();
+  console.log(products);
+  const hasAlreadyLoadedProducts = Boolean(products.length > 0);
+  console.log(hasAlreadyLoadedProducts);
+  const data = useFetchData({
+    url: 'https://fakestoreapi.com/products',
+    options: { disable: hasAlreadyLoadedProducts },
+  });
+  console.log(data);
 
-  const filterProducts = useFilterByCategory(category, products);
+  const [localProducts, setLocalProducts] = useState(products);
+
+  useEffect(() => {
+    if (hasAlreadyLoadedProducts) {
+      setLocalProducts(products);
+    } else if (data) {
+      setLocalProducts(data);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
+
+  const filterProducts = useFilterByCategory(category, localProducts);
 
   const filterProduct = (e) => {
     const category = e.target.value;

@@ -3,8 +3,9 @@ import { useAppContext } from '../context/context';
 import { mergeArrays } from '../utils/mergeArr';
 import axios from 'axios';
 
-export default function useFetchData(url) {
+export default function useFetchData({ url, options = { disable: false } }) {
   const [{ products, favoriteProducts }, dispatch] = useAppContext();
+  const isDisabled = options.disable;
 
   const fetchData = useCallback(async () => {
     try {
@@ -26,12 +27,20 @@ export default function useFetchData(url) {
       console.log(err);
     }
   }, [url, dispatch]);
+
   useEffect(() => {
     dispatch({
       type: 'LOADING',
+      payload: true,
     });
-
-    fetchData();
-  }, [dispatch, fetchData]);
+    if (!isDisabled) {
+      fetchData(url);
+    } else {
+      dispatch({
+        type: 'LOADING',
+        payload: false,
+      });
+    }
+  }, [url, dispatch, fetchData, isDisabled]);
   return products;
 }
