@@ -8,7 +8,7 @@ import './Products.css';
 import useFetchData from '../../hooks/useFetchOnce';
 import useFilterByCategory from '../../hooks/useFilterByCategories';
 
-const Products = () => {
+const Products = ({ shopCollection }) => {
   const [{ category, loading, products }, dispatch] = useAppContext();
   const hasAlreadyLoadedProducts = Boolean(products.length > 0);
   const data = useFetchData({

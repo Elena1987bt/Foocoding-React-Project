@@ -48,7 +48,9 @@ const Checkout = () => {
             <form>
               <div className="payment__priceContainer">
                 <h3>Order Total: ${total}</h3>
-                <button className="checkout__btn">Buy Now</button>
+                <button className="checkout__btn" disabled>
+                  Buy Now
+                </button>
               </div>
             </form>
           </div>
