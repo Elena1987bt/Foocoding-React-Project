@@ -38,20 +38,22 @@ const Cart = () => {
             </tr>
           </tbody>
         </table>
-        <Link to="/checkout" className="checkout__btn">
-          Proceed To Checkout
-        </Link>
-        <Link
-          to="/cart"
-          className="clear__btn"
-          onClick={() =>
-            dispatch({
-              type: 'CLEAR_CART',
-            })
-          }
-        >
-          Clear Cart
-        </Link>
+        <div className="checkout__btns">
+          <Link to="/checkout" className="checkout__btn">
+            Proceed To Checkout
+          </Link>
+          <Link
+            to="/cart"
+            className="clear__btn"
+            onClick={() =>
+              dispatch({
+                type: 'CLEAR_CART',
+              })
+            }
+          >
+            Clear Cart
+          </Link>
+        </div>
       </div>
     </div>
   );

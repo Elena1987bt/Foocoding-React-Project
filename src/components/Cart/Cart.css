@@ -43,7 +43,10 @@ td {
   width: 100%;
   max-width: 35rem;
 }
-
+.checkout__btns {
+  display: flex;
+  max-width: 35rem;
+}
 .checkout__btn,
 .clear__btn {
   background-color: var(--lightPink);
@@ -56,6 +59,9 @@ td {
   cursor: pointer;
   transition: all 0.5s ease-in;
   margin-right: 0.8rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  flex: 0.5;
 }
 .checkout__btn:hover,
 .clear__btn:hover {
@@ -69,5 +75,14 @@ td {
   th:nth-child(2),
   th:nth-child(3) {
     flex: 0.4;
+  }
+
+  .checkout__btns {
+    flex-direction: column;
+    width: 100%;
+  }
+  .checkout__btn,
+  .clear__btn {
+    width: 100%;
   }
 }

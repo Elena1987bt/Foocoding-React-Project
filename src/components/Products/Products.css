@@ -73,7 +73,7 @@ form span {
     grid-template-columns: repeat(2, 1fr);
   }
   .products__top select {
-    width: 15rem;
+    width: 7rem;
   }
 }
 
