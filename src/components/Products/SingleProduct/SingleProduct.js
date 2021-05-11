@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import SearchIcon from '@material-ui/icons/Search';
+import ZoomInIcon from '@material-ui/icons/ZoomIn';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import TuneIcon from '@material-ui/icons/Tune';
@@ -30,7 +30,7 @@ const SingleProduct = ({ bottomClass, product }) => {
 
         <ul className="singleProduct__Icons">
           <span>
-            <SearchIcon className="singleProduct__Icon" />
+            <ZoomInIcon className="singleProduct__Icon" />
           </span>
           <span
             onClick={() => {

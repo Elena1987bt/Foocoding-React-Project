@@ -5,7 +5,7 @@ import SingleProduct from './SingleProduct/SingleProduct';
 import Loading from '../Loading/Loading';
 import { useAppContext } from '../../context/context';
 import './Products.css';
-import useFetchData from '../../hooks/useFetchOnce';
+import useFetchData from '../../hooks/useFetchData';
 import useFilterByCategory from '../../hooks/useFilterByCategories';
 
 const Products = () => {

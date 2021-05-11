@@ -4,7 +4,7 @@ import Carousel from '../components/Carousel/Carousel';
 import SingleProduct from '../components/Products/SingleProduct/SingleProduct';
 import Loading from '../components/Loading/Loading';
 import useFilterByCategory from '../hooks/useFilterByCategories';
-import useFetchData from '../hooks/useFetchOnce';
+import useFetchData from '../hooks/useFetchData';
 import { useAppContext } from '../context/context';
 import ScrollToTop from '../utils/ScrollToTop';
 

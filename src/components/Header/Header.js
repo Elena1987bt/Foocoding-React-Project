@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { useAppContext } from '../../context/context';
 import './Header.css';
 import FavoriteIconBtn from '../_favoriteIcon/FavoriteIconBtn';
+import scrollAd from '../../utils/scrollAd';
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
@@ -21,19 +22,11 @@ const Header = () => {
     setShowNav(!showNav);
     setShowFavoriteIcon(!showFavoriteIcon);
   };
-  const scrollAd = () => {
-    const scrollHeight = window.pageYOffset;
-    const navHeight = navBar.current.getBoundingClientRect().height;
-    if (scrollHeight > navHeight) {
-      navBar.current.classList.add('fix__nav');
-    } else {
-      navBar.current.classList.remove('fix__nav');
-    }
-  };
+
   useEffect(() => {
-    window.addEventListener('scroll', scrollAd);
+    window.addEventListener('scroll', () => scrollAd(navBar));
     return () => {
-      window.removeEventListener('scroll', scrollAd);
+      window.removeEventListener('scroll', () => scrollAd(navBar));
     };
   }, []);
   return (
