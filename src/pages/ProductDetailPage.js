@@ -5,16 +5,12 @@ import SingleProduct from '../components/Products/SingleProduct/SingleProduct';
 import Loading from '../components/Loading/Loading';
 import Error from '../components/Error/Error';
 import useFilterByCategory from '../hooks/useFilterByCategories';
-// import useFetchData from '../hooks/useFetchData';
 import { useAppContext } from '../context/context';
 import ScrollToTop from '../utils/ScrollToTop';
 
 const ProductDetailPage = () => {
   const [{ loading, error, products }] = useAppContext();
   const { id } = useParams();
-  // const products = useFetchData({
-  //   url: 'https://fakestoreapi.com/products',
-  // });
   const product = products.find((el) => el.id === parseInt(id));
   const category = product.category;
   const filterProducts = useFilterByCategory(category, products);

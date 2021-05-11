@@ -27,7 +27,7 @@ export default function useFetchData({ url, options = { disable: false } }) {
       console.log(err);
       dispatch({
         type: 'ERROR',
-        payload: 'Opps, something went wrong! Try again later...!',
+        payload: 'Oops, something went wrong! Try again later...!',
       });
     }
   }, [url, dispatch, favoriteProducts]);

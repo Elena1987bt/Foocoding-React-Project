@@ -39,7 +39,7 @@ const SingleCartItem = ({ cartItem }) => {
               className="removeButton"
               onClick={() =>
                 dispatch({
-                  type: 'SET_ALL_PRODUCTS',
+                  type: 'SET_PRODUCTS',
                   payload: 'All',
                 })
               }

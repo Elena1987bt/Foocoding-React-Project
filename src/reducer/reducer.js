@@ -7,9 +7,7 @@ export const reducer = (state, action) => {
       return { ...state, products: payload, loading: false };
     case 'FILTER_PRODUCTS':
       return { ...state, category: payload.category, products: payload.products, loading: false };
-    case 'SET_PRODUCT':
-      return { ...state, product: payload, category: payload.category, loading: false };
-    case 'SET_ALL_PRODUCTS':
+    case 'SET_PRODUCTS':
       return { ...state, category: payload, loading: false };
     case 'ADD_TO_FAVORITES':
       if (state.favoriteProducts.find((el) => el.id === payload.id)) {

@@ -27,7 +27,7 @@ const HeroSlide = ({
             className="hero__button"
             onClick={() => {
               dispatch({
-                type: 'SET_ALL_PRODUCTS',
+                type: 'SET_PRODUCTS',
                 payload: "women's clothing",
               });
             }}
@@ -39,7 +39,7 @@ const HeroSlide = ({
             className="hero__button"
             onClick={() => {
               dispatch({
-                type: 'SET_ALL_PRODUCTS',
+                type: 'SET_PRODUCTS',
                 payload: "men's clothing",
               });
             }}

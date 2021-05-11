@@ -20,7 +20,7 @@ const Promotion = () => {
               className="promotion__contentLink"
               onClick={() => {
                 dispatch({
-                  type: 'SET_ALL_PRODUCTS',
+                  type: 'SET_PRODUCTS',
                   payload: 'All',
                 });
               }}
@@ -39,7 +39,7 @@ const Promotion = () => {
               className="promotion__contentLink"
               onClick={() => {
                 dispatch({
-                  type: 'SET_ALL_PRODUCTS',
+                  type: 'SET_PRODUCTS',
                   payload: 'All',
                 });
               }}

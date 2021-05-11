@@ -58,7 +58,7 @@ const ProductDetail = ({ product }) => {
               className="productDetail__button"
               onClick={() =>
                 dispatch({
-                  type: 'SET_ALL_PRODUCTS',
+                  type: 'SET_PRODUCTS',
                   payload: 'All',
                 })
               }

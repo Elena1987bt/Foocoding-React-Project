@@ -17,7 +17,7 @@ const Category = ({ image, title, numOfProducts, category }) => {
           className="category__link"
           onClick={() => {
             dispatch({
-              type: 'SET_ALL_PRODUCTS',
+              type: 'SET_PRODUCTS',
               payload: category,
             });
           }}

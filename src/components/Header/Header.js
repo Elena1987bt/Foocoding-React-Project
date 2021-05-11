@@ -64,7 +64,7 @@ const Header = () => {
                   onClick={() => {
                     toggleButton();
                     dispatch({
-                      type: 'SET_ALL_PRODUCTS',
+                      type: 'SET_PRODUCTS',
                       payload: 'All',
                     });
                   }}
