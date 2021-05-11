@@ -84,9 +84,8 @@ export const reducer = (state, action) => {
       return { ...state, total, amountTotal: amount };
     case 'CLEAR_CART':
       return { ...state, cart: [] };
-
     case 'ERROR':
-      return { ...state, loading: false };
+      return { ...state, loading: false, error: payload };
     default:
       return state;
   }

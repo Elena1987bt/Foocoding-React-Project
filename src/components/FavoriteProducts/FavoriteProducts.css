@@ -37,7 +37,8 @@ p {
   color: var(--lightPink);
   align-self: flex-end;
 }
-.favoriteProducts__button:hover {
+.favoriteProducts__button:hover,
+.close__btn:hover {
   cursor: pointer;
   color: var(--pink);
 }

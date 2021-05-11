@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Adverts from '../Adverts/Adverts';
 import LocalMallIcon from '@material-ui/icons/LocalMall';
-import SearchIcon from '@material-ui/icons/Search';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
@@ -90,11 +89,6 @@ const Header = () => {
                 <Link to="/cart" className="nav__icon" onClick={toggleButton}>
                   <LocalMallIcon />
                   <small className="count">{amountTotal}</small>
-                </Link>
-              </li>
-              <li className="nav__item">
-                <Link to="/" className="nav__icon">
-                  <SearchIcon />
                 </Link>
               </li>
             </ul>

@@ -3,13 +3,14 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import SingleProduct from './SingleProduct/SingleProduct';
 import Loading from '../Loading/Loading';
+import Error from '../Error/Error';
 import { useAppContext } from '../../context/context';
 import './Products.css';
 import useFetchData from '../../hooks/useFetchData';
 import useFilterByCategory from '../../hooks/useFilterByCategories';
 
 const Products = () => {
-  const [{ category, loading, products }, dispatch] = useAppContext();
+  const [{ category, loading, products, error }, dispatch] = useAppContext();
   const hasAlreadyLoadedProducts = Boolean(products.length > 0);
   const data = useFetchData({
     url: 'https://fakestoreapi.com/products',
@@ -38,6 +39,7 @@ const Products = () => {
   };
 
   if (loading) return <Loading />;
+  if (error) return <Error error={error} />;
   return (
     <section className="products">
       <div className="products__top container">

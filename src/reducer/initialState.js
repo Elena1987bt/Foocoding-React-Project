@@ -9,5 +9,5 @@ export const initialState = {
   amountTotal: 0,
   total: 0,
   subtotal: [],
-  error: 'Error! Try Again!',
+  error: null,
 };
