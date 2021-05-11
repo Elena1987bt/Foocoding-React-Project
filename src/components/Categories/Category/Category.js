@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../../../context/context';
 import './Category.css';
@@ -27,5 +28,10 @@ const Category = ({ image, title, numOfProducts, category }) => {
     </div>
   );
 };
-
+Category.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+  numOfProducts: PropTypes.number,
+  category: PropTypes.string,
+};
 export default Category;

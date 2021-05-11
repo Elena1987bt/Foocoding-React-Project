@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useAppContext } from '../../context/context';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import CloseIcon from '@material-ui/icons/Close';
@@ -41,5 +42,7 @@ const FavoriteProducts = ({ onClick }) => {
     </div>
   );
 };
-
+FavoriteProducts.propTypes = {
+  onClick: PropTypes.func,
+};
 export default FavoriteProducts;

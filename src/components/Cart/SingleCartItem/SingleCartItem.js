@@ -1,9 +1,10 @@
+import PropTypes from 'prop-types';
 import './SingleCartItem.css';
 import { Link } from 'react-router-dom';
 import { useAppContext } from '../../../context/context';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
-import { subTotal } from '../../../utils/calculateTotal';
+import { subTotal } from '../../../utils/calculateSubTotal';
 
 const SingleCartItem = ({ cartItem }) => {
   const { id, image, price, title, amount } = cartItem;
@@ -60,6 +61,9 @@ const SingleCartItem = ({ cartItem }) => {
       <td>${subTotal(price, amount).toFixed(2)}</td>
     </tr>
   );
+};
+SingleCartItem.propTypes = {
+  cartItem: PropTypes.object,
 };
 
 export default SingleCartItem;

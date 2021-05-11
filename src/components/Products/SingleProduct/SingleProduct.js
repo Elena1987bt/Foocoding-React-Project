@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SearchIcon from '@material-ui/icons/Search';
@@ -10,7 +11,6 @@ import './SingleProduct.css';
 const SingleProduct = ({ bottomClass, product }) => {
   const { id, image, price, title, isFavorite } = product;
   const [{}, dispatch] = useAppContext();
-
   return (
     <div className="singleProduct">
       <div className="singleProduct__img">
@@ -70,4 +70,8 @@ const SingleProduct = ({ bottomClass, product }) => {
   );
 };
 
+SingleProduct.propTypes = {
+  bottomClass: PropTypes.bool,
+  product: PropTypes.object,
+};
 export default SingleProduct;

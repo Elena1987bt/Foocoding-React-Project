@@ -46,7 +46,7 @@ const Hero = () => {
         titleThree="Trending from men and women style collection"
         btnOne="shop women's"
         btnTwo="shop men's"
-        different
+        differentClassName
       />
     </Slider>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -38,6 +39,14 @@ const Carousel = ({ Slide, title, subtitle, slidesToShow, slideToShowMobile, pro
       </div>
     </section>
   );
+};
+Carousel.propTypes = {
+  Slide: PropTypes.func,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  slidesToShow: PropTypes.number,
+  slideToShowMobile: PropTypes.number,
+  products: PropTypes.array,
 };
 
 export default Carousel;

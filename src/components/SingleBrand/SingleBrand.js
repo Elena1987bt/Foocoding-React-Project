@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SingleBrand = ({ image }) => {
   return (
@@ -7,5 +8,7 @@ const SingleBrand = ({ image }) => {
     </div>
   );
 };
-
+SingleBrand.propTypes = {
+  image: PropTypes.string,
+};
 export default SingleBrand;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { useAppContext } from '../../context/context';
@@ -85,4 +86,7 @@ const ProductDetail = ({ product }) => {
   );
 };
 
+ProductDetail.propTypes = {
+  product: PropTypes.object,
+};
 export default ProductDetail;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -16,6 +17,10 @@ const FavoriteIconBtn = ({ showLikes, setShowLikes }) => {
       {showLikes && <FavoriteProducts onClick={() => setShowLikes(false)} />}
     </>
   );
+};
+FavoriteIconBtn.propTypes = {
+  showLikes: PropTypes.bool,
+  setShowLikes: PropTypes.func,
 };
 
 export default FavoriteIconBtn;
