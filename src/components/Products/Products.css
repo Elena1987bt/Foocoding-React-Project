@@ -24,7 +24,7 @@ form {
 
 form span {
   position: absolute;
-  top: 50%;
+  top: 52%;
   right: 0.5rem;
   transform: translateY(-50%);
   font-size: 2rem;
@@ -73,7 +73,10 @@ form span {
     grid-template-columns: repeat(2, 1fr);
   }
   .products__top select {
-    width: 7rem;
+    width: 9.5rem;
+  }
+  .products__top h1 {
+    font-size: 1.2rem;
   }
 }
 

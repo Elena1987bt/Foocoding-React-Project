@@ -82,6 +82,7 @@ td img {
 @media only screen and (max-width: 768px) {
   .cart__info {
     flex-direction: column;
+    margin-left: -1.2rem;
   }
   .cart__info p {
     display: none;
@@ -99,5 +100,8 @@ td img {
   td:first-child {
     text-align: left;
     flex: 0.4;
+  }
+  .buttons__group {
+    margin-right: 1rem;
   }
 }
