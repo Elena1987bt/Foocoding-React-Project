@@ -7,7 +7,7 @@ import Error from '../Error/Error';
 import { useAppContext } from '../../context/context';
 import './Products.css';
 import useFetchData from '../../hooks/useFetchData';
-import useFilterByCategory from '../../hooks/useFilterByCategories';
+import filterByCategories from '../../utils/filterByCategories';
 
 const Products = () => {
   const [{ category, loading, products, error }, dispatch] = useAppContext();
@@ -28,7 +28,7 @@ const Products = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
-  const filterProducts = useFilterByCategory(category, localProducts);
+  const filterProducts = filterByCategories(category, localProducts);
 
   const filterProduct = (e) => {
     const category = e.target.value;

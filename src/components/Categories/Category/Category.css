@@ -21,6 +21,7 @@
   height: 18rem;
   width: 100%;
   transition: all 500ms linear;
+  object-fit: cover;
 }
 
 .category:hover img {

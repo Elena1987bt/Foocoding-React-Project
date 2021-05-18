@@ -50,12 +50,13 @@ const SingleCartItem = ({ cartItem }) => {
         </div>
       </td>
       <td className="buttons__group">
-        <button onClick={() => toggleAmount(id, 'inc')}>
-          <AddIcon />
-        </button>
-        <p className="amount">{amount}</p>
         <button onClick={() => toggleAmount(id, 'dec')}>
           <RemoveIcon />
+        </button>
+
+        <p className="amount">{amount}</p>
+        <button onClick={() => toggleAmount(id, 'inc')}>
+          <AddIcon />
         </button>
       </td>
       <td>${subTotal(price, amount).toFixed(2)}</td>

@@ -10,7 +10,7 @@ export default function useFetchData({ url, options = { disable: false } }) {
   const fetchData = useCallback(async () => {
     try {
       const res = await axios.get(url);
-      const data = await res.data;
+      const data = res.data;
       const basicData = data.map((el) => {
         return {
           ...el,
