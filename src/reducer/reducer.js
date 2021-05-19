@@ -46,7 +46,8 @@ export const reducer = (state, action) => {
         ...state,
         cart: state.cart.filter((cartItem) => cartItem.id !== payload),
       };
-
+    case 'GET_LOCAL_STORAGE':
+      return { ...state, cart: [...state.cart, ...payload], loading: false };
     case 'TOGGLE_AMOUNT':
       let tempCart = state.cart
         .map((cartItem) => {
