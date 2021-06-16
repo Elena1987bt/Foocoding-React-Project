@@ -6,9 +6,10 @@ import './Cart.css';
 
 const Cart = () => {
   const [{ cart, total }, dispatch] = useAppContext();
+
   useEffect(() => {
-    dispatch({ type: 'GET_TOTALS' });
-  }, [cart, dispatch]);
+    localStorage.setItem('cartItems', JSON.stringify(cart));
+  }, [cart]);
 
   return (
     <div className="cart container">
