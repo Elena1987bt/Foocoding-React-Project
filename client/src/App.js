@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
@@ -10,8 +11,22 @@ import RegisterPage from './pages/RegisterPage';
 import AboutPage from './pages/AboutPage';
 import ScrollToTop from './utils/ScrollToTop';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { useAppContext } from './context/context';
 
 function App() {
+  const [{ cart }, dispatch] = useAppContext();
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('cartItems'));
+    if (items) {
+      dispatch({
+        type: 'GET_LOCAL_STORAGE',
+        payload: items,
+      });
+    }
+  }, [dispatch]);
+  useEffect(() => {
+    dispatch({ type: 'GET_TOTALS' });
+  }, [cart, dispatch]);
   return (
     <Router>
       <ScrollToTop />

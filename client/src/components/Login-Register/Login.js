@@ -16,7 +16,6 @@ const Login = () => {
       password:password
     })
     .then(function (response) {
-      console.log(response);
       alert(response.data.success);
       if(response.data.code === 200) {
         history.push('/');

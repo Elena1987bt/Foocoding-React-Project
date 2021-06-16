@@ -48,7 +48,6 @@ exports.login = async function(req,res){
         "failed":"error ocurred"
       })
     } else {
-      console.log(results);
       if(results.length >0){
         const comparision = await bcrypt.compare(password, results[0].password)
         if(comparision){

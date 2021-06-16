@@ -18,7 +18,6 @@ const Register = () => {
       password:passwordReg
     })
     .then(response => {
-      console.log(response);
       history.push('/login')
       alert('You are succsefully registered. Now you can log in!')
      
