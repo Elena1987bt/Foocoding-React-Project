@@ -8,4 +8,4 @@ It is an online store. It contains seven pages: Main(Home) page with a header( n
 
  For user registration/login Node.js and MySql Database are used.
 
-Final version of this website you can see here: https://online-store-foocoding-react-app.netlify.app/
+Final version of this website you can see here: https://online-store-react-node-mysql.netlify.app/
