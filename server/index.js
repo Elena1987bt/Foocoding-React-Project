@@ -1,7 +1,8 @@
-require('dotenv').config()
-const express = require("express");
-const loginroutes = require('./routes/loginroutes');
-const cors = require('cors')
+require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const authRouter = require('./routes/authRouter');
 
 const app = express();
 
@@ -10,16 +11,13 @@ app.use(express.json());
 // Allow cross origin requests
 app.use(cors());
 
-// test
-app.get('/', (req, res) => {
-    res.json({ message: 'welcome to our upload module apis' });
-});
+app.use('/', authRouter);
 
-
-app.post('/register', loginroutes.register);
-app.post('/login', loginroutes.login);
-
+mongoose
+  .connect(process.env.DATABASE_MDB)
+  .then((con) => console.log('Database connected...'))
+  .catch((err) => console.log(err));
 
 app.listen(process.env.PORT, () => {
-    console.log('Server started  ');
+  console.log(`Server started at port ${process.env.PORT}`);
 });
