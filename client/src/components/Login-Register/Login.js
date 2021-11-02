@@ -12,7 +12,7 @@ const Login = () => {
   const login = (e) => {
     e.preventDefault();
     axios
-      .post('http://127.0.0.1:5000/login', {
+      .post('https://foo-coding-online-shop.herokuapp.com/login', {
         email: email,
         password: password,
       })

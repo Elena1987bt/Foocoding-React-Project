@@ -13,7 +13,7 @@ const Register = () => {
   const register = (e) => {
     e.preventDefault();
     axios
-      .post('http://127.0.0.1:5000/register', {
+      .post('https://foo-coding-online-shop.herokuapp.com/register', {
         username: usernameReg,
         email: emailReg,
         password: passwordReg,

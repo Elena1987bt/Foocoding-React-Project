@@ -8,4 +8,4 @@ This website uses react router to handle multiple pages and context API and useR
 
 For user registration/login Node.js and MongoDB Database are used.
 
-Final version of this website you can see here: https://online-store-react-node-mysql.netlify.app/
+Final version of this website you can see here: https://online-store-react-node-mongodb.netlify.app/
