@@ -20,7 +20,7 @@ const Register = () => {
       })
       .then((response) => {
         history.push('/login');
-        alert('You are succsefully registered. Now you can log in!');
+        alert('You are successfully registered. Now you can log in!');
       })
       .catch((error) => {
         console.log(error);

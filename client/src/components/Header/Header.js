@@ -35,9 +35,12 @@ const Header = () => {
         <div className="container">
           <div className="nav-center">
             <Link to="/" className="nav__logo">
-              Sho<span>p</span>ify
+              Sho<span>p</span>yShop
             </Link>
-            <button className={`nav__toggleBtn ${showNav && 'hide'}`} onClick={toggleButton}>
+            <button
+              className={`nav__toggleBtn ${showNav && 'hide'}`}
+              onClick={toggleButton}
+            >
               <MenuIcon className="MenuIcon" />
             </button>
           </div>
@@ -77,9 +80,12 @@ const Header = () => {
                   About
                 </Link>
               </li>
-            
+
               <li className="nav__item">
-                <FavoriteIconBtn showLikes={showLikes} setShowLikes={setShowLikes} />
+                <FavoriteIconBtn
+                  showLikes={showLikes}
+                  setShowLikes={setShowLikes}
+                />
               </li>
               <li className="nav__item">
                 <Link to="/cart" className="nav__icon" onClick={toggleButton}>
@@ -88,16 +94,27 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav__item">
-                {user ?  <Link to="/login" onClick={() =>
-                 dispatch({
-                  type:'SET_USER',
-                  payload:null
-                })}>
-                  Log Out
-                </Link> : 
-                <Link to="/login" className="nav__icon" onClick={toggleButton}>
-                  <PersonOutlineIcon />
-                </Link> }
+                {user ? (
+                  <Link
+                    to="/login"
+                    onClick={() =>
+                      dispatch({
+                        type: 'SET_USER',
+                        payload: null,
+                      })
+                    }
+                  >
+                    Log Out
+                  </Link>
+                ) : (
+                  <Link
+                    to="/login"
+                    className="nav__icon"
+                    onClick={toggleButton}
+                  >
+                    <PersonOutlineIcon />
+                  </Link>
+                )}
               </li>
             </ul>
           </div>
