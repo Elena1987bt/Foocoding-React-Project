@@ -6,6 +6,6 @@ It is an online store. It contains seven pages: Main(Home) page with a header( n
 
 This website uses react router to handle multiple pages and context API and useReducer hook for state management.
 
-For user registration/login Node.js and MongoDB Database are used.
+
 
 Final version of this website you can see here: https://online-store-react-node-mongodb.netlify.app/
